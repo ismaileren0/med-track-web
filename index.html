@@ -1,0 +1,2924 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="MEDtrack - Kişisel ilaç takip ve sağlık raporu sistemi">
+<title>MEDtrack — Sağlık Takip Sistemi</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCA0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQwIj4KICA8IS0tIEhhcCBnw7Z2ZGVzaSAtIHNvbCB5YXLEsW0gKGJleWF6KSAtLT4KICA8cmVjdCB4PSIyIiB5PSI4IiB3aWR0aD0iMzYiIGhlaWdodD0iMjQiIHJ4PSIxMiIgcnk9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gSGFwIGfDtnZkZXNpIC0gc2HEnyB5YXLEsW0gKHllxZ9pbCkgLS0+CiAgPGNsaXBQYXRoIGlkPSJyaWdodEhhbGYiPgogICAgPHJlY3QgeD0iMjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPgogIDwvY2xpcFBhdGg+CiAgPHJlY3QgeD0iMiIgeT0iOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjI0IiByeD0iMTIiIHJ5PSIxMiIgZmlsbD0iIzJkOWU1ZiIgY2xpcC1wYXRoPSJ1cmwoI3JpZ2h0SGFsZikiLz4KICA8IS0tIEhhcCBvcnRhIMOnaXpnaXNpIC0tPgogIDxsaW5lIHgxPSIyMCIgeTE9IjkiIHgyPSIyMCIgeTI9IjMxIiBzdHJva2U9InJnYmEoMCwwLDAsMC4xMikiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwhLS0gSGFwIMO8c3QgcGFybGFtYXPEsSAtLT4KICA8cmVjdCB4PSI2IiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4yNSIvPgoKICA8IS0tICsgacWfYXJldGkgKHllxZ9pbCwgaGFwxLFuIHNhxJ/EsW5hIGJpdGnFn2lrLCB0cmFuc3BhcmFuIGdlw6dpxZ8pIC0tPgogIDwhLS0gKyB5YXRheSBrb2wgLS0+CiAgPHJlY3QgeD0iNDMiIHk9IjE3IiB3aWR0aD0iMTYiIGhlaWdodD0iNiIgcng9IjMiIGZpbGw9IiMzOWQwNjgiIG9wYWNpdHk9IjAuOTIiLz4KICA8IS0tICsgZGlrZXkga29sIC0tPgogIDxyZWN0IHg9IjQ4IiB5PSIxMiIgd2lkdGg9IjYiIGhlaWdodD0iMTYiIHJ4PSIzIiBmaWxsPSIjMzlkMDY4IiBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gVHJhbnNwYXJhbiBnZcOnacWfIG92ZXJsYXk6IGhhcCBpbGUgKyBhcmFzxLFuZGEgLS0+CiAgPHJlY3QgeD0iMzQiIHk9IjE1IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIzIgogICAgICAgIGZpbGw9InVybCgjdHJhbnNHcmFkKSIgb3BhY2l0eT0iMC41NSIvPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ0cmFuc0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkOWU1ZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzlkMDY4IiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgo8L3N2Zz4K">
+<style>
+  /* === RESET & BASE === */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green:   #2d7a4f;
+    --green-l: #c8e6d4;
+    --green-m: #8fcfaa;
+    --green-dk:#1a4d31;
+    --blue:    #1a5fa8;
+    --blue-l:  #cce0f5;
+    --red:     #c0392b;
+    --red-l:   #f9d6d3;
+    --amber:   #b45309;
+    --amber-l: #fde9b0;
+    --gray:    #4a6358;
+    --gray-l:  #2a4a38;
+    --border:  rgba(180,220,195,0.35);
+    --text:    #f0faf4;
+    --muted:   #a8d8bc;
+    --white:   #1e3a2a;
+    --card-bg: #243d2f;
+    --radius:  10px;
+    --shadow:  0 2px 8px rgba(0,0,0,0.25);
+  }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: #152a1e;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* === NAVBAR === */
+  .navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  .nav-brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    text-decoration: none;
+  }
+
+  .brand-med {
+    color: #39ff78;
+    position: relative;
+    display: inline-block;
+    text-shadow:
+      0 0 6px rgba(57,255,120,0.9),
+      0 0 14px rgba(57,255,120,0.55),
+      0 0 28px rgba(57,255,120,0.25);
+    animation: medNeonBoot .9s cubic-bezier(.22,1,.36,1) both, medNeonGlow 3s ease-in-out 1s infinite;
+  }
+
+  .brand-med::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    width: 120%; height: 200%;
+    background: radial-gradient(ellipse at center,
+      rgba(57,255,120,0.18) 0%,
+      rgba(57,255,120,0.06) 45%,
+      transparent 70%);
+    pointer-events: none;
+    animation: medGlowPulse 3s ease-in-out 1s infinite;
+  }
+ 
+  .brand-track {
+    color: #f0faf4;
+    font-weight: 700;
+    text-shadow: 0 0 4px rgba(255,255,255,0.15);
+  }
+
+  @keyframes medNeonBoot {
+    0%   { opacity:0; transform: scale(0.6) translateX(-8px);
+           text-shadow: none; filter: blur(4px); }
+    60%  { opacity:1; transform: scale(1.08) translateX(1px);
+           text-shadow: 0 0 20px rgba(57,255,120,1), 0 0 40px rgba(57,255,120,0.6); }
+    100% { opacity:1; transform: scale(1) translateX(0);
+           text-shadow: 0 0 6px rgba(57,255,120,0.9), 0 0 14px rgba(57,255,120,0.55), 0 0 28px rgba(57,255,120,0.25); }
+  }
+  @keyframes medNeonGlow {
+    0%,100% { text-shadow: 0 0 6px rgba(57,255,120,0.9),  0 0 14px rgba(57,255,120,0.55), 0 0 28px rgba(57,255,120,0.25); }
+    50%     { text-shadow: 0 0 10px rgba(57,255,120,1),    0 0 22px rgba(57,255,120,0.75), 0 0 44px rgba(57,255,120,0.35); }
+  }
+  @keyframes medGlowPulse {
+    0%,100% { opacity:1; }
+    50%     { opacity:0.5; }
+  }
+  .nav-links { display: flex; gap: 5px; align-items: center; }
+
+
+  .nav-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s;
+    color: #5adf8a;
+    background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
+    border-radius: 20px;
+    border-top:    1px solid rgba(255,255,255,0.28);
+    border-left:   1px solid rgba(255,255,255,0.12);
+    border-right:  1px solid rgba(0,0,0,0.22);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.10);
+    text-shadow: 0 0 8px rgba(90,223,138,0.3);
+    letter-spacing: 0.3px;
+  }
+  .nav-btn:hover {
+    color: #7dffa8;
+    background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.06) 100%);
+    text-shadow: 0 0 10px rgba(90,223,138,0.55), 0 0 20px rgba(90,223,138,0.2);
+    border-top-color: rgba(255,255,255,0.5);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .nav-btn.active {
+    color: #39ff78;
+    background: linear-gradient(180deg, rgba(57,255,120,0.22) 0%, rgba(57,255,120,0.06) 100%);
+    border-top-color: rgba(57,255,120,0.6);
+    border-left-color: rgba(57,255,120,0.2);
+    text-shadow: 0 0 8px rgba(57,255,120,0.6), 0 0 16px rgba(57,255,120,0.25);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.4), 0 0 6px rgba(57,255,120,0.15), inset 0 1px 0 rgba(57,255,120,0.2);
+  }
+
+
+  .nav-ai-btn {
+    margin-left: auto;
+    margin-right: 4px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    border-radius: 20px;
+    color: #5dcc8a;
+    background: linear-gradient(180deg, rgba(57,255,120,0.14) 0%, rgba(57,255,120,0.04) 100%);
+    border-top:    1px solid rgba(57,255,120,0.7);
+    border-left:   1px solid rgba(57,255,120,0.3);
+    border-right:  1px solid rgba(0,80,30,0.5);
+    border-bottom: 1px solid rgba(0,80,30,0.6);
+    box-shadow:
+      0 0 7px rgba(57,255,120,0.2),
+      0 0 16px rgba(57,255,120,0.08),
+      inset 0 1px 0 rgba(57,255,120,0.18),
+      0 3px 10px rgba(0,0,0,0.4);
+    text-shadow: 0 0 7px rgba(57,255,120,0.55), 0 0 14px rgba(57,255,120,0.25);
+    animation: neonPulse 2.5s ease-in-out infinite;
+  }
+  .nav-ai-btn:hover {
+    box-shadow:
+      0 0 12px rgba(57,255,120,0.35),
+      0 0 24px rgba(57,255,120,0.15),
+      inset 0 1px 0 rgba(57,255,120,0.28),
+      0 3px 14px rgba(0,0,0,0.5);
+  }
+  @keyframes neonPulse {
+    0%,100% { box-shadow: 0 0 7px rgba(57,255,120,0.2), 0 0 16px rgba(57,255,120,0.08), inset 0 1px 0 rgba(57,255,120,0.18), 0 3px 10px rgba(0,0,0,0.4); }
+    50%      { box-shadow: 0 0 12px rgba(57,255,120,0.38), 0 0 26px rgba(57,255,120,0.16), inset 0 1px 0 rgba(57,255,120,0.28), 0 3px 14px rgba(0,0,0,0.5); }
+  }
+
+  /* === NOTIFICATION PANEL === */
+  #notif-panel {
+    position: fixed;
+    top: 68px;
+    right: 20px;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 340px;
+    pointer-events: none;
+  }
+  .notif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-size: 13px;
+    pointer-events: all;
+    animation: notifDrop .35s cubic-bezier(.22,1,.36,1);
+    transition: opacity .3s, transform .3s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    backdrop-filter: blur(8px);
+    max-width: 340px;
+    position: relative;
+    overflow: hidden;
+  }
+  .notif-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 14px 14px 0 0;
+  }
+  @keyframes notifDrop {
+    from { transform: translateX(60px) scale(.9); opacity: 0; }
+    to   { transform: translateX(0)    scale(1);  opacity: 1; }
+  }
+  .notif-ok     { background: linear-gradient(135deg,#1a3d28,#1e4a30); border: 1px solid rgba(45,200,100,.3); }
+  .notif-ok::before { background: linear-gradient(90deg,#2dc864,#7de8aa); }
+  .notif-warn   { background: linear-gradient(135deg,#2d2010,#3a2a10); border: 1px solid rgba(251,191,36,.3); }
+  .notif-warn::before { background: linear-gradient(90deg,#f59e0b,#fbbf24); }
+  .notif-info   { background: linear-gradient(135deg,#0f1e3a,#152540); border: 1px solid rgba(96,165,250,.3); }
+  .notif-info::before { background: linear-gradient(90deg,#3b82f6,#93c5fd); }
+  .notif-danger { background: linear-gradient(135deg,#3a0f0f,#4a1010); border: 1px solid rgba(248,113,113,.3); }
+  .notif-danger::before { background: linear-gradient(90deg,#ef4444,#f87171); }
+  .notif-icon { font-size: 24px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .notif-body  { flex: 1; color: #f0f9f4; }
+  .notif-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; color: #fff; }
+  .notif-text  { font-size: 13px; color: rgba(255,255,255,.8); line-height: 1.5; }
+  .notif-close {
+    background: rgba(255,255,255,.1); border: none; cursor: pointer;
+    font-size: 14px; color: rgba(255,255,255,.6); padding: 2px 6px;
+    border-radius: 6px; line-height: 1; flex-shrink: 0; margin-top: 2px;
+    transition: background .15s;
+  }
+  .notif-close:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+  /* === PAGES === */
+  .page { display: none; max-width: 860px; margin: 0 auto; padding: 28px 24px; }
+  .page.active { display: block; }
+
+  /* === CARDS === */
+  .card {
+    background: #243d2f;
+    border: 1px solid rgba(180,220,195,0.25);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+  }
+
+  /* === PAGE HEADER === */
+  .page-header { margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; }
+  .page-title { font-size: 22px; font-weight: 700; }
+  .page-sub   { font-size: 16px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+
+  /* === STAT ROW === */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+  .stat-box  { background: #243d2f; border: 1px solid rgba(180,220,195,0.25); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); }
+  .stat-num  { font-size: 26px; font-weight: 700; }
+  .stat-lbl  { font-size: 14px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+  .c-green { color: var(--green); }
+  .c-amber { color: var(--amber); }
+  .c-blue  { color: var(--blue); }
+
+  /* === FORMS === */
+  .form-group { margin-bottom: 14px; }
+  .form-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 5px; }
+  input, select, textarea {
+    width: 100%; padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: #1e3a2a;
+    outline: none;
+    transition: border-color .15s;
+    color: var(--text);
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--green-m); background:#253d2e; }
+  textarea { resize: vertical; min-height: 80px; }
+
+  /* === BUTTONS === */
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 20px; border-radius: 8px; border: none;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: opacity .15s, transform .12s;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-primary { background: var(--green); color: #fff; }
+  .btn-primary:hover { opacity: .9; }
+  .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+  .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green-m); }
+  .btn-outline:hover { background: var(--green-l); }
+  .btn-danger { background: var(--red-l); color: var(--red); border: 1px solid #f5c6c2; }
+  .btn-danger:hover { background: #fbd5d2; }
+  .btn-sm { padding: 6px 13px; font-size: 13px; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* === MED LIST === */
+  .med-list { display: flex; flex-direction: column; gap: 10px; }
+  .med-card {
+    background: #1e3a2a;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .med-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .med-info { flex: 1; min-width: 0; }
+  .med-name { font-weight: 600; font-size: 15px; }
+  .med-sub  { font-size: 15px; font-weight: 600; color: var(--muted); margin-top: 4px; }
+  .med-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+
+  /* === BADGES === */
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+  }
+  .badge-ok     { background: rgba(45,122,79,0.3); color: #7de8aa; }
+  .badge-warn   { background: rgba(180,83,9,0.3); color: #fbbf77; }
+  .badge-danger { background: rgba(192,57,43,0.3); color: #f87171; }
+  .badge-info   { background: rgba(26,95,168,0.3); color: #93c5fd; }
+  .badge-gray   { background: rgba(255,255,255,0.1); color: #9ecfb4; }
+
+  /* === TABS INLINE === */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 18px; }
+  .tab-btn {
+    padding: 9px 18px; font-size: 14px; font-weight: 700;
+    border: none; background: none; cursor: pointer; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn.active { color: #7de8aa; border-bottom-color: #7de8aa; font-weight: 600; }
+
+  /* === RISK TABLE === */
+  .risk-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .risk-table th { text-align: left; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; padding: 0 10px 8px; }
+  .risk-table td { padding: 10px; border-top: 1px solid var(--border); vertical-align: middle; }
+  .risk-table tr:hover td { background: rgba(255,255,255,0.05); }
+
+  /* === HISTORY LIST === */
+  .history-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .history-item:last-child { border-bottom: none; }
+  .history-date { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+  .history-text { font-size: 14px; line-height: 1.55; }
+
+  /* === TIMELINE === */
+  .timeline { padding-left: 20px; border-left: 2px solid var(--border); }
+  .tl-item { position: relative; padding: 0 0 18px 18px; }
+  .tl-dot {
+    position: absolute; left: -7px; top: 4px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--green);
+  }
+  .tl-time { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+  .tl-text { font-size: 14px; font-weight: 700; }
+  .tl-sub  { font-size: 13px; color: var(--muted); }
+
+  /* === LOADER === */
+  .spinner {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes ai-pulse {
+    0%   { transform: scale(1);   opacity: .7; }
+    100% { transform: scale(2.4); opacity: 0;  }
+  }
+
+  /* === AI RESULT BOX === */
+  .ai-box {
+    background: #1a3326;
+    border: 1px solid rgba(142,207,170,0.4);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 14px;
+    color: var(--text);
+  }
+  .ai-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .8px; color: var(--green); margin-bottom: 8px;
+  }
+
+  /* === EMPTY === */
+  .empty { text-align: center; padding: 36px 20px; color: var(--muted); font-size: 14px; }
+
+  /* === PROGRESS BAR === */
+  .prog-wrap { background: var(--gray-l); border-radius: 8px; height: 7px; overflow: hidden; }
+  .prog-fill { height: 100%; background: var(--green); border-radius: 8px; transition: width .4s; }
+
+  /* === PROFILE INFO === */
+  .info-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { color: var(--muted); }
+  .info-val { font-weight: 600; }
+
+  /* === FILE INPUT === */
+  .file-drop {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+    font-size: 14px; color: var(--muted);
+  }
+  .file-drop:hover { border-color: var(--green-m); background: rgba(45,122,79,0.2); color: #7de8aa; }
+
+  /* === RESPONSIVE === */
+  /* ── TABLET ────────────────────────────────── */
+  @media(max-width: 768px) {
+    .page { padding: 16px; }
+    .card { padding: 16px; }
+    .stat-row { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .form-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  }
+
+  /* ── MOBİL ──────────────────────────────────── */
+  @media(max-width: 600px) {
+    /* Navbar: logo + hamburger, linkler gizle */
+    .navbar { padding: 0 12px; height: 54px; }
+    .nav-links { display: none !important; }
+    .nav-ai-btn { display: none !important; }
+    #hamburger { display: flex !important; }
+    .nav-brand { font-size: 18px; }
+
+    /* Sayfalar */
+    .page { padding: 12px 10px; }
+    .card { padding: 14px 12px; margin-bottom: 12px; border-radius: 10px; }
+    .card-title { font-size: 14px; margin-bottom: 12px; }
+    .page-title { font-size: 18px; }
+    .page-sub   { font-size: 13px; }
+
+    /* Formlar */
+    .form-row { grid-template-columns: 1fr; gap: 10px; }
+    .form-group { margin-bottom: 10px; }
+    label { font-size: 11px; }
+    input, select, textarea { font-size: 14px; padding: 9px 10px; }
+
+    /* İstatistik */
+    .stat-row { grid-template-columns: 1fr; gap: 8px; }
+    .stat-num  { font-size: 22px; }
+
+    /* Butonlar */
+    .btn { padding: 10px 16px; font-size: 13px; }
+    .btn-sm { padding: 6px 12px; font-size: 12px; }
+    .btn-row { flex-direction: column; gap: 8px; }
+    .btn-row .btn { width: 100%; justify-content: center; }
+
+    /* Badge */
+    .badge { font-size: 11px; padding: 2px 8px; }
+
+    /* Haftalık tablo — yatay kaydırma */
+    #home-schedule { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    #home-schedule table { min-width: 500px; }
+
+    /* İlaç kartları */
+    .med-card { flex-wrap: wrap; gap: 8px; }
+
+    /* Gün şeridi */
+    .day-strip { gap: 4px; }
+    .day-pill  { width: 30px; height: 30px; font-size: 10px; }
+
+    /* Tabs */
+    .tabs { overflow-x: auto; }
+    .tab-btn { padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+
+    /* Risk tablosu */
+    .risk-table { font-size: 12px; }
+    .risk-table td, .risk-table th { padding: 7px 6px; }
+
+    /* Tahlil alanları */
+    #tahlil-fields > div > div > div { flex-direction: column; }
+
+    /* İleriki hafta modal */
+    #cal-modal > div { padding: 16px; }
+
+    /* Profil özeti */
+    .info-row { font-size: 13px; }
+
+    /* AI sonuç kutusu */
+    .ai-box { font-size: 13px; padding: 12px; }
+
+    /* Bildirimler — tam genişlik */
+    #notif-panel { right: 8px; left: 8px; max-width: none; }
+    .notif-item { font-size: 12px; padding: 10px 12px; }
+
+    /* Page header */
+    .page-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .page-header .btn { width: 100%; }
+
+    /* Sekme içi başlık */
+    .section-header { flex-wrap: wrap; gap: 8px; }
+
+    /* Sağ alt panel */
+    #symptom-note-panel { left: 10px; right: 10px; width: auto; bottom: 10px; }
+  }
+
+  /* ── ÇOK KÜÇÜK MOBİL ────────────────────────── */
+  @media(max-width: 380px) {
+    .page { padding: 8px; }
+    .card { padding: 10px; }
+    .day-pill { width: 26px; height: 26px; font-size: 9px; }
+    .nav-brand { font-size: 16px; }
+  }
+
+  /* === GÜN TAKVİMİ === */
+  .day-strip { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .day-pill {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; position: relative; flex-shrink: 0;
+  }
+  .day-pill.dp-done   { background: rgba(45,122,79,0.4); color: #7de8aa; }
+  .day-pill.dp-today  { background: var(--green);   color: #fff; box-shadow: 0 0 0 2px #7de8aa; }
+  .day-pill.dp-future { background: rgba(255,255,255,0.07); color: #9ecfb4; }
+  .day-pill.dp-missed { background: rgba(192,57,43,0.3); color: #f87171; }
+  .day-x {
+    position: absolute; top: -4px; right: -4px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    font-size: 9px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .day-check {
+    position: absolute; top: -4px; right: -4px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--green); color: #fff;
+    font-size: 9px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .prev-pill {
+    padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+    background: rgba(45,122,79,0.3); color: #7de8aa; border: 1px solid rgba(142,207,170,0.4);
+  }
+  .dur-opt.active { background: var(--green-l); color: var(--green); border-color: var(--green-m); }
+
+  /* ── Sayfa giriş animasyonu ─────────────────────────────────────── */
+  @keyframes pageEnter {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  @keyframes cardEnter {
+    from { opacity: 0; transform: translateY(14px) scale(0.985); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);     }
+  }
+  .page.active {
+    animation: pageEnter .42s cubic-bezier(.22,1,.36,1) both;
+  }
+  .page.active .card {
+    animation: cardEnter .45s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .page.active .card:nth-child(1)  { animation-delay: .04s; }
+  .page.active .card:nth-child(2)  { animation-delay: .09s; }
+  .page.active .card:nth-child(3)  { animation-delay: .14s; }
+  .page.active .card:nth-child(4)  { animation-delay: .19s; }
+  .page.active .card:nth-child(5)  { animation-delay: .24s; }
+  .page.active .card:nth-child(6)  { animation-delay: .29s; }
+
+  /* ── Buton hover büyüme ──────────────────────────────────────────── */
+  .btn {
+    transform: scale(1);
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1), opacity .15s, background .15s !important;
+  }
+  .btn:hover:not(:disabled) { transform: scale(1.06); }
+  .btn:active:not(:disabled){ transform: scale(0.97); }
+
+  .nav-btn {
+    transform: scale(1);
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1), background .15s, color .15s, box-shadow .15s !important;
+  }
+  .nav-btn:hover  { transform: scale(1.07); }
+  .nav-btn:active { transform: scale(0.96); }
+
+  .nav-ai-btn {
+    transform: scale(1);
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .2s !important;
+  }
+  .nav-ai-btn:hover  { transform: scale(1.07); }
+  .nav-ai-btn:active { transform: scale(0.96); }
+
+  /* Tab butonları */
+  .tab-btn, .dur-opt, .sym-tag {
+    transition: transform .18s cubic-bezier(.34,1.56,.64,1), background .15s, color .15s !important;
+  }
+  .tab-btn:hover, .dur-opt:hover, .sym-tag:hover { transform: scale(1.05); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<!-- Mobil menü overlay -->
+<div id="mob-overlay" onclick="closeMobMenu()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:190"></div>
+<div id="mob-menu" style="display:none;position:fixed;top:58px;left:0;right:0;background:#1a3326;border-bottom:1px solid rgba(180,220,195,0.2);z-index:191;padding:10px 16px;flex-direction:column;gap:4px">
+  <button class="nav-btn active" id="mob-btn-home"    onclick="goPage('home',this);closeMobMenu()" style="text-align:left;border-radius:8px">Ana Sayfa</button>
+  <button class="nav-btn"        id="mob-btn-ilaclar" onclick="goPage('ilaclar',this);closeMobMenu()" style="text-align:left;border-radius:8px">İlaçlar</button>
+  <button class="nav-btn"        id="mob-btn-risk"    onclick="goPage('risk',this);closeMobMenu()" style="text-align:left;border-radius:8px">Risk</button>
+  <button class="nav-btn"        id="mob-btn-tahlil"  onclick="goPage('tahlil',this);closeMobMenu()" style="text-align:left;border-radius:8px">Tahlil</button>
+  <button class="nav-btn"        id="mob-btn-profil"  onclick="goPage('profil',this);closeMobMenu()" style="text-align:left;border-radius:8px">Profil</button>
+</div>
+
+<nav class="navbar">
+  <div class="nav-brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCA0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQwIj4KICA8IS0tIEhhcCBnw7Z2ZGVzaSAtIHNvbCB5YXLEsW0gKGJleWF6KSAtLT4KICA8cmVjdCB4PSIyIiB5PSI4IiB3aWR0aD0iMzYiIGhlaWdodD0iMjQiIHJ4PSIxMiIgcnk9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gSGFwIGfDtnZkZXNpIC0gc2HEnyB5YXLEsW0gKHllxZ9pbCkgLS0+CiAgPGNsaXBQYXRoIGlkPSJyaWdodEhhbGYiPgogICAgPHJlY3QgeD0iMjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPgogIDwvY2xpcFBhdGg+CiAgPHJlY3QgeD0iMiIgeT0iOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjI0IiByeD0iMTIiIHJ5PSIxMiIgZmlsbD0iIzJkOWU1ZiIgY2xpcC1wYXRoPSJ1cmwoI3JpZ2h0SGFsZikiLz4KICA8IS0tIEhhcCBvcnRhIMOnaXpnaXNpIC0tPgogIDxsaW5lIHgxPSIyMCIgeTE9IjkiIHgyPSIyMCIgeTI9IjMxIiBzdHJva2U9InJnYmEoMCwwLDAsMC4xMikiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwhLS0gSGFwIMO8c3QgcGFybGFtYXPEsSAtLT4KICA8cmVjdCB4PSI2IiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4yNSIvPgoKICA8IS0tICsgacWfYXJldGkgKHllxZ9pbCwgaGFwxLFuIHNhxJ/EsW5hIGJpdGnFn2lrLCB0cmFuc3BhcmFuIGdlw6dpxZ8pIC0tPgogIDwhLS0gKyB5YXRheSBrb2wgLS0+CiAgPHJlY3QgeD0iNDMiIHk9IjE3IiB3aWR0aD0iMTYiIGhlaWdodD0iNiIgcng9IjMiIGZpbGw9IiMzOWQwNjgiIG9wYWNpdHk9IjAuOTIiLz4KICA8IS0tICsgZGlrZXkga29sIC0tPgogIDxyZWN0IHg9IjQ4IiB5PSIxMiIgd2lkdGg9IjYiIGhlaWdodD0iMTYiIHJ4PSIzIiBmaWxsPSIjMzlkMDY4IiBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gVHJhbnNwYXJhbiBnZcOnacWfIG92ZXJsYXk6IGhhcCBpbGUgKyBhcmFzxLFuZGEgLS0+CiAgPHJlY3QgeD0iMzQiIHk9IjE1IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIzIgogICAgICAgIGZpbGw9InVybCgjdHJhbnNHcmFkKSIgb3BhY2l0eT0iMC41NSIvPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ0cmFuc0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkOWU1ZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzlkMDY4IiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgo8L3N2Zz4K" alt="MEDtrack logo" style="height:26px;width:auto;vertical-align:middle;margin-right:3px"><span class="brand-med">MED</span><span class="brand-track">track</span></div>
+  <div class="nav-links" style="margin-left:16px">
+    <button class="nav-btn active" onclick="goPage('home',this)">Ana Sayfa</button>
+    <button class="nav-btn" onclick="goPage('ilaclar',this)">İlaçlar</button>
+    <button class="nav-btn" onclick="goPage('risk',this)">Risk</button>
+    <button class="nav-btn" onclick="goPage('tahlil',this)">Tahlil</button>
+    <button class="nav-btn" onclick="goPage('profil',this)">Profil</button>
+  </div>
+  <button class="nav-ai-btn" id="nav-ai-btn" onclick="showApiKeyModal()" title="Gemini API Anahtarı">
+    <span id="apikey-ind">🔴 API Bağlı Değil</span>
+  </button>
+  <button id="hamburger" onclick="toggleMobMenu()" style="display:none;background:none;border:1px solid rgba(180,220,195,0.3);border-radius:8px;padding:6px 10px;cursor:pointer;color:#9ecfb4;font-size:18px;margin-left:auto">☰</button>
+</nav>
+
+<!-- BİLDİRİM PANELİ (site içi) -->
+<div id="notif-panel"></div>
+
+<!-- ===================== ANA SAYFA ===================== -->
+<div id="page-home" class="page active">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Hoş geldiniz<span id="home-username"></span> 👋</div>
+      <div class="page-sub" id="home-date">—</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:18px">
+    <div class="stat-box" style="display:inline-block;min-width:160px">
+      <div class="stat-num c-green" id="s-total">0</div>
+      <div class="stat-lbl">Kayıtlı İlaç</div>
+    </div>
+  </div>
+
+  <!-- Bu haftaki program -->
+  <div class="card">
+    <div class="card-title" style="justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="card-icon" style="background:#d4edda">📅</div>
+        Bu Haftaki İlaç Programı
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="openCalModal()">🗓 İleriki Haftalar</button>
+    </div>
+    <div id="home-schedule" style="overflow-x:auto"></div>
+  </div>
+
+  <!-- Yan Etki İzleme + Notlar -->
+  <div class="card">
+    <div class="tabs" style="margin-bottom:16px">
+      <button class="tab-btn active" id="tab-izleme" onclick="switchHomeTab('izleme',this)">🔔 Yan Etki İzleme</button>
+      <button class="tab-btn" id="tab-notlar" onclick="switchHomeTab('notlar',this)">📝 Yan Etkiler</button>
+    </div>
+
+    <div id="home-tab-izleme">
+      <div id="home-watchers">
+        <div class="empty">Aktif izleme yok. İlaç aldıktan sonra burada yan etki uyarıları görünür.</div>
+      </div>
+    </div>
+
+    <div id="home-tab-notlar" style="display:none">
+      <div id="home-symptom-notes"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== İLAÇLAR ===================== -->
+<div id="page-ilaclar" class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">İlaç Takibi</div>
+      <div class="page-sub">Güncel ve geçmiş ilaçlarınız</div>
+    </div>
+    <button class="btn btn-primary" onclick="showAddForm(true)">+ Yeni İlaç</button>
+  </div>
+
+  <!-- Ekleme formu -->
+  <div class="card" id="add-form" style="display:none">
+    <div class="card-title">Yeni İlaç Ekle</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>İlaç Adı</label>
+        <input type="text" id="f-name" placeholder="örn. Augmentin">
+      </div>
+      <div class="form-group">
+        <label>Etken Madde / Tür</label>
+        <input type="text" id="f-type" placeholder="örn. Antibiyotik">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Doz</label>
+        <input type="text" id="f-dose" placeholder="örn. 500mg">
+      </div>
+      <div class="form-group">
+        <label>Günlük Kullanım</label>
+        <select id="f-freq" onchange="updateTimeInputs()">
+          <option value="1">Günde 1 kez</option>
+          <option value="2">Günde 2 kez</option>
+          <option value="3">Günde 3 kez</option>
+          <option value="0.5">Haftada 3–4 kez</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Alış Saatleri</label>
+      <div id="time-inputs" style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:13px;font-weight:600;color:#9ecfb4;min-width:50px">1. doz</span>
+          <input type="time" id="f-time-0" value="08:00" style="max-width:140px">
+        </div>
+      </div>
+    </div>
+
+    <!-- Kullanım süresi seçimi -->
+    <div class="form-group">
+      <label>Kullanım Süresi</label>
+      <div style="display:flex;gap:10px;margin-bottom:12px">
+        <button type="button" class="btn btn-outline btn-sm dur-opt active" onclick="selectDurMode('range',this)">📅 Tarih aralığı seç</button>
+        <button type="button" class="btn btn-outline btn-sm dur-opt" onclick="selectDurMode('forever',this)">♾️ Sürekli kullanım</button>
+      </div>
+
+      <!-- Tarih aralığı modu -->
+      <div id="dur-range">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">
+          <div>
+            <label style="margin-bottom:4px">Başlangıç</label>
+            <input type="date" id="f-start" style="max-width:160px" onchange="updateDatePreview()">
+          </div>
+          <div>
+            <label style="margin-bottom:4px">Bitiş</label>
+            <input type="date" id="f-end" style="max-width:160px" onchange="updateDatePreview()">
+          </div>
+        </div>
+        <!-- Mini takvim önizlemesi -->
+        <div id="date-preview" style="margin-top:12px"></div>
+      </div>
+
+      <!-- Sürekli kullanım modu -->
+      <div id="dur-forever" style="display:none">
+        <div style="background:rgba(26,95,168,0.2);border:1px solid rgba(26,95,168,0.4);border-radius:8px;padding:10px 14px;font-size:14px;color:#93c5fd">
+          ℹ️ Bu ilaç süresiz olarak takip listesinde kalacak. İstediğinizde "Bitir" diyerek geçmişe taşıyabilirsiniz.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Notlar</label>
+      <input type="text" id="f-notes" placeholder="örn. Tok karnına alınacak">
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="addMed()">Kaydet</button>
+      <button class="btn btn-outline" onclick="showAddForm(false)">İptal</button>
+    </div>
+  </div>
+
+  <!-- Sekmeler -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showMedTab('guncel',this)">Güncel</button>
+    <button class="tab-btn" onclick="showMedTab('gecmis',this)">Geçmiş</button>
+  </div>
+
+  <div id="medtab-guncel">
+    <div id="med-guncel-list"></div>
+  </div>
+  <div id="medtab-gecmis" style="display:none">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:12px">
+      <button class="btn btn-danger btn-sm" onclick="clearPastMeds()">Geçmişi Sil</button>
+    </div>
+    <div id="med-gecmis-list"></div>
+  </div>
+</div>
+
+<!-- ===================== RİSK ===================== -->
+<div id="page-risk" class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Risk Analizi</div>
+      <div class="page-sub">İlaç × profil uyum değerlendirmesi</div>
+    </div>
+    <button class="btn btn-primary" onclick="analyzeRisk()">
+      <span id="risk-btn-lbl">Analizi Güncelle</span>
+    </button>
+  </div>
+
+  <div class="card" id="risk-profile-warn" style="display:none">
+    <div style="color:var(--amber);font-weight:600;font-size:14px">
+      ⚠️ Profil bilgileriniz eksik. Doğru analiz için lütfen <a href="#" onclick="goPage('profil',null)" style="color:var(--blue)">Profil</a> sayfasını doldurun.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="card-icon" style="background:#fdecea">⚠️</div>
+      İlaç Risk Tablosu
+    </div>
+    <div id="risk-table-wrap">
+      <div class="empty">Risk analizi için önce ilaç ekleyin ve profil bilgilerinizi girin.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="card-icon" style="background:var(--green-l)">🤖</div>
+      AI Değerlendirmesi
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">
+      Profil ve ilaç bilgilerinize göre kişiselleştirilmiş risk değerlendirmesi.
+    </p>
+    <button class="btn btn-primary" id="risk-ai-btn" onclick="runRiskAI()">
+      <span id="risk-ai-lbl">AI ile Değerlendir</span>
+    </button>
+    <div id="risk-ai-result"></div>
+  </div>
+</div>
+
+<!-- ===================== TAHLİL ===================== -->
+<div id="page-tahlil" class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Kan Tahlili</div>
+      <div class="page-sub">Tahlil yükle, karşılaştır, beslenme önerisi al</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="card-icon" style="background:var(--blue-l)">📄</div>
+      Tahlil Yükle
+    </div>
+    <div class="file-drop" onclick="document.getElementById('tahlil-file').click()">
+      📎 Tahlil sonucunuzu buraya tıklayarak veya sürükleyerek yükleyin<br>
+      <span style="font-size:12px">(PDF veya görsel — değerleri metin olarak da girebilirsiniz)</span>
+    </div>
+    <input type="file" id="tahlil-file" accept=".pdf,.jpg,.jpeg,.png" style="display:none" onchange="handleFile(this)">
+    <div id="file-name" style="font-size:13px;color:var(--muted);margin-top:8px"></div>
+
+    <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">
+      <div class="card-title" style="margin-bottom:12px;font-size:14px">Manuel Değer Girişi</div>
+      <div id="tahlil-fields" style="display:block">
+        
+      </div>
+      <div style="margin-top:14px" class="btn-row">
+        <button class="btn btn-primary" onclick="saveTahlil()">Tahlili Kaydet</button>
+        <button class="btn btn-outline" onclick="clearTahlilForm()">Temizle</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="card-icon" style="background:var(--amber-l)">📊</div>
+        Tahlil Geçmişi ve Karşılaştırma
+      </div>
+      <button class="btn btn-danger btn-sm" onclick="deleteAllTahlil()">Tümünü Sil</button>
+    </div>
+    <div id="tahlil-history"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <div class="card-icon" style="background:var(--green-l)">🥗</div>
+      AI Beslenme Önerisi
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">
+      Son iki tahlili karşılaştırarak alerjenlerinizi dikkate alan beslenme önerisi.
+    </p>
+    <button class="btn btn-primary" id="tahlil-ai-btn" onclick="runTahlilAI()">
+      <span id="tahlil-ai-lbl">Öneri Al</span>
+    </button>
+    <div id="tahlil-ai-result"></div>
+  </div>
+</div>
+
+<!-- ===================== PROFİL ===================== -->
+<div id="page-profil" class="page">
+  <div class="page-header">
+    <div class="page-title">Profilim</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Kişisel Bilgiler</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" id="p-name" placeholder="Adınız Soyadınız">
+      </div>
+      <div class="form-group">
+        <label>Yaş</label>
+        <input type="number" id="p-age" placeholder="Yaşınız" min="1" max="120">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Boy (cm)</label>
+        <input type="number" id="p-height" placeholder="175">
+      </div>
+      <div class="form-group">
+        <label>Kilo (kg)</label>
+        <input type="number" id="p-weight" placeholder="70">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Kan Grubu</label>
+        <select id="p-blood">
+          <option value="">Seçiniz</option>
+          <option value="A+">A Rh+</option>
+          <option value="A-">A Rh-</option>
+          <option value="B+">B Rh+</option>
+          <option value="B-">B Rh-</option>
+          <option value="AB+">AB Rh+</option>
+          <option value="AB-">AB Rh-</option>
+          <option value="0+">0 Rh+</option>
+          <option value="0-">0 Rh-</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Cinsiyet</label>
+        <select id="p-gender">
+          <option value="">Seçiniz</option>
+          <option value="erkek">Erkek</option>
+          <option value="kadin">Kadın</option>
+          <option value="diger">Diğer</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Kronik Hastalıklar</label>
+      <input type="text" id="p-diseases" placeholder="örn. Diyabet, Hipertansiyon (yoksa boş bırakın)">
+    </div>
+    <div class="form-group">
+      <label>Bilinen Alerjiler</label>
+      <input type="text" id="p-allergies" placeholder="örn. Penisilin, Polen, Fıstık (yoksa boş bırakın)">
+    </div>
+    <div class="form-group">
+      <label>Kullandığınız Sürekli İlaçlar</label>
+      <input type="text" id="p-chronic-meds" placeholder="örn. Coumadin, Metformin">
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="saveProfile()">Profili Kaydet</button>
+    </div>
+    <div id="profile-msg" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Özet Bilgiler</div>
+    <div id="profile-summary"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="justify-content:space-between">
+      <span>İlaç Kullanım Geçmişi</span>
+      <button class="btn btn-danger btn-sm" onclick="clearUsageHistory()">Geçmişi Sil</button>
+    </div>
+    <div id="usage-history">
+      <div class="empty">Henüz tamamlanmış ilaç kaydı yok.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<script>
+// ============ SABIT ARRAY'LER ============
+var DAY_NAMES = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+var MON_SHORT = ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
+
+// ============ GEMİNİ API ============
+// Ücretsiz: gemini-2.0-flash — https://aistudio.google.com/apikey
+var GEMINI_MODEL = 'gemini-3.1-flash-lite';
+
+function getApiKey() {
+  return localStorage.getItem('medtrack_gemini_key') || '';
+}
+
+// Gemini'ye istek at — ham metin döndürür
+async function geminiCall(prompt, jsonMode) {
+  var key = getApiKey();
+  if (!key) {
+    showApiKeyModal();
+    throw new Error('API anahtarı girilmedi.');
+  }
+  var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + GEMINI_MODEL + ':generateContent?key=' + key;
+  var genConfig = { maxOutputTokens: 1200 };
+ 
+  var body = {
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: genConfig
+  };
+  var r = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  });
+  if (!r.ok) {
+    var err = await r.json().catch(function(){ return {}; });
+    var msg = (err.error && err.error.message) ? err.error.message : 'API hatası (HTTP ' + r.status + ')';
+    if (r.status === 400 || r.status === 401 || r.status === 403) showApiKeyModal();
+    throw new Error(msg);
+  }
+  var data = await r.json();
+  var raw = data.candidates && data.candidates[0] &&
+            data.candidates[0].content &&
+            data.candidates[0].content.parts &&
+            data.candidates[0].content.parts[0]
+            ? data.candidates[0].content.parts[0].text
+            : '';
+  if (!raw) throw new Error('Boş yanıt');
+  return raw;
+}
+
+
+async function geminiAsk(prompt) {
+  var raw = await geminiCall(prompt, false);
+  return raw
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
+}
+
+
+async function geminiAskJSON(prompt) {
+  var raw = await geminiCall(prompt, false);
+
+  var clean = raw.replace(/```json\s*/gi, '').replace(/```/g, '').trim();
+
+  var match = clean.match(/\{[\s\S]*\}/);
+  if (match) return match[0];
+  return clean;
+}
+
+// --- API Key Modal ---
+function showApiKeyModal() {
+  if (document.getElementById('apikey-modal')) return;
+  var overlay = document.createElement('div');
+  overlay.id = 'apikey-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.innerHTML =
+    '<div style="background:#fff;border-radius:12px;padding:28px;max-width:440px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.18)">' +
+      '<div style="font-size:18px;font-weight:700;margin-bottom:6px">Gemini API Anahtarı</div>' +
+      '<p style="font-size:14px;color:var(--muted);margin-bottom:16px">AI özellikleri için ücretsiz Gemini API anahtarı gerekli.<br>' +
+        '<a href="https://aistudio.google.com/apikey" target="_blank" style="color:var(--blue)">aistudio.google.com/apikey</a> adresinden saniyeler içinde alabilirsiniz.</p>' +
+      '<input type="text" id="apikey-input" placeholder="AIza..." style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;margin-bottom:14px;outline:none">' +
+      '<div style="display:flex;gap:10px">' +
+        '<button onclick="saveApiKey()" style="flex:1;padding:10px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer">Kaydet</button>' +
+        '<button onclick="document.getElementById(\'apikey-modal\').remove()" style="padding:10px 16px;background:var(--gray-l);color:var(--muted);border:none;border-radius:8px;font-size:14px;cursor:pointer">İptal</button>' +
+      '</div>' +
+      '<p style="font-size:12px;color:var(--muted);margin-top:12px">🔒 Anahtar yalnızca tarayıcınızda saklanır, hiçbir sunucuya gönderilmez.</p>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  setTimeout(function(){ var el=document.getElementById('apikey-input'); if(el) el.focus(); }, 50);
+}
+
+function saveApiKey() {
+  var val = (document.getElementById('apikey-input').value || '').trim();
+  if (!val) { alert('Lütfen bir anahtar girin.'); return; }
+  localStorage.setItem('medtrack_gemini_key', val);
+  document.getElementById('apikey-modal').remove();
+  updateApiKeyIndicator();
+  showNotif('ok', 'API anahtarı kaydedildi', 'Artık AI özelliklerini kullanabilirsiniz.', 4000);
+}
+
+function updateApiKeyIndicator() {
+  var ind = document.getElementById('apikey-ind');
+  var btn = document.getElementById('nav-ai-btn');
+  if (!ind) return;
+  if (getApiKey()) {
+    ind.textContent = 'AI AKTİF';
+    if (btn) {
+      btn.style.color = '#39ff78';
+      btn.style.textShadow = '0 0 7px rgba(57,255,120,0.55), 0 0 14px rgba(57,255,120,0.25)';
+      btn.style.animation = 'neonPulse 2.5s ease-in-out infinite';
+    }
+  } else {
+    ind.textContent = '⚠ API Bağlı Değil';
+    if (btn) {
+      btn.style.color = '#f87171';
+      btn.style.textShadow = '0 0 8px rgba(248,113,113,0.6)';
+      btn.style.animation = 'none';
+      btn.style.boxShadow = '0 0 8px rgba(248,113,113,0.2), 0 3px 10px rgba(0,0,0,0.4)';
+      btn.style.borderTopColor = 'rgba(248,113,113,0.5)';
+      btn.style.background = 'linear-gradient(180deg,rgba(248,113,113,0.12) 0%,rgba(248,113,113,0.03) 100%)';
+    }
+  }
+}
+
+// ============ STATE ============
+var db = {
+  meds: [],       // guncel ilaclar
+  pastMeds: [],   // gecmis ilaclar
+  tahliller: [],  // kan tahlilleri
+  watchers: [],   // yan etki zamanlayıcıları
+  profile: {}
+};
+
+
+(function loadDB() {
+  try {
+    var saved = localStorage.getItem('medtrack_db');
+    if (saved) db = JSON.parse(saved);
+  } catch(e) {}
+  // zamanlayıcılar
+  setInterval(checkWatchers, 60000);   // yan etki kontrolü — her dakika
+  setInterval(checkReminders, 30000);  // ilaç hatırlatma — her 30 saniye
+  checkWatchers();
+  checkReminders();
+  updateHomeStats();
+  renderHomeSchedule();
+  renderWatchers();
+})();
+
+// ============ İLAÇ HATIRLATMA SİSTEMİ ============
+
+
+function checkReminders() {
+  var now    = new Date();
+  var hh     = String(now.getHours()).padStart(2, '0');
+  var mm     = String(now.getMinutes()).padStart(2, '0');
+  var todayKey = now.toDateString();
+
+  db.meds.forEach(function(m) {
+    if (!m.time) return;
+
+
+    var addedDate = new Date(m.addedAt);
+    var daysPassed = Math.floor((now - addedDate) / 86400000);
+
+    if (m.days && daysPassed >= m.days) return;
+
+
+    var medH = m.time.split(':')[0];
+    var medM = m.time.split(':')[1];
+    var nowMinutes = now.getHours() * 60 + now.getMinutes();
+    var medMinutes = parseInt(medH) * 60 + parseInt(medM);
+    var diff = Math.abs(nowMinutes - medMinutes);
+    if (diff > 1) return;  
+
+  
+    var remKey = 'reminded_' + m.id + '_' + todayKey + '_' + m.time;
+    if (localStorage.getItem(remKey)) return;
+
+
+    if (m.takenToday) return;
+
+
+    localStorage.setItem(remKey, '1');
+    showNotif(
+      'warn',
+      '💊 İlaç Zamanı — ' + m.name,
+      m.dose + ' dozunuzu almayı unutmayın.' + (m.notes ? ' (' + m.notes + ')' : ''),
+      15000  // 15 saniye görünür
+    );
+  });
+}
+
+function saveDB() {
+  try { localStorage.setItem('medtrack_db', JSON.stringify(db)); } catch(e) {}
+}
+
+// ============ SAYFA NAVIGASYON ============
+function navToIlaclar() {
+  var btn = document.querySelector('.nav-btn:nth-child(2)');
+  goPage('ilaclar', btn);
+}
+
+function goPage(id, btn) {
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var pg = document.getElementById('page-' + id);
+
+  pg.classList.remove('active');
+  void pg.offsetWidth;
+  pg.classList.add('active');
+  if (btn) {
+    document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+  if (id === 'home')    { updateHomeStats(); renderHomeSchedule(); renderWatchers(); }
+  if (id === 'ilaclar') { renderMedLists(); }
+  if (id === 'risk')    { renderRiskTable(); }
+  if (id === 'tahlil')  { renderTahlilHistory(); buildTahlilFields(); }
+  if (id === 'profil')  { loadProfile(); renderUsageHistory(); renderProfileSummary(); }
+}
+
+// ============ MOBİL MENÜ ============
+function toggleMobMenu() {
+  var menu    = document.getElementById('mob-menu');
+  var overlay = document.getElementById('mob-overlay');
+  var isOpen  = menu.style.display === 'flex';
+  menu.style.display    = isOpen ? 'none' : 'flex';
+  overlay.style.display = isOpen ? 'none' : 'block';
+  document.getElementById('hamburger').textContent = isOpen ? '☰' : '✕';
+}
+
+function closeMobMenu() {
+  document.getElementById('mob-menu').style.display    = 'none';
+  document.getElementById('mob-overlay').style.display = 'none';
+  document.getElementById('hamburger').textContent = '☰';
+}
+
+// ============ BİLDİRİM SİSTEMİ (site içi) ============
+function showNotif(type, title, body, duration) {
+  duration = duration || 6000;
+  var icons = { ok: '💊', warn: '⚠️', info: 'ℹ️', danger: '🚨' };
+  var panel = document.getElementById('notif-panel');
+  var div   = document.createElement('div');
+  div.className = 'notif-item notif-' + type;
+
+  var icon  = document.createElement('div');
+  icon.className = 'notif-icon';
+  icon.textContent = icons[type] || '💊';
+
+  var bd    = document.createElement('div');
+  bd.className = 'notif-body';
+
+  var ttl   = document.createElement('div');
+  ttl.className = 'notif-title';
+  ttl.textContent = title;
+
+  var txt   = document.createElement('div');
+  txt.className = 'notif-text';
+  txt.innerHTML = body;
+
+  bd.appendChild(ttl);
+  bd.appendChild(txt);
+
+  var cl    = document.createElement('button');
+  cl.className = 'notif-close';
+  cl.textContent = '✕';
+  cl.onclick = function(){ div.remove(); };
+
+  div.appendChild(icon);
+  div.appendChild(bd);
+  div.appendChild(cl);
+  panel.appendChild(div);
+
+  // İlerleme çubuğu
+  var bar = document.createElement('div');
+  bar.style.cssText = 'position:absolute;bottom:0;left:0;height:3px;background:rgba(255,255,255,.35);border-radius:0 0 14px 14px;transition:width linear ' + duration + 'ms;width:100%';
+  div.appendChild(bar);
+  setTimeout(function(){ bar.style.width = '0'; }, 30);
+
+  setTimeout(function() {
+    div.style.opacity = '0';
+    div.style.transform = 'translateX(40px)';
+    setTimeout(function(){ if(div.parentElement) div.remove(); }, 300);
+  }, duration);
+}
+
+// ============ ANA SAYFA ============
+function updateHomeStats() {
+  document.getElementById('s-total').textContent = db.meds.length;
+  var now = new Date();
+  document.getElementById('home-date').textContent =
+    now.toLocaleDateString('tr-TR', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+  var uEl = document.getElementById('home-username');
+  if (uEl) uEl.textContent = db.profile && db.profile.name ? ', ' + db.profile.name.toUpperCase() : '';
+}
+
+function renderHomeSchedule() {
+  renderWeekTable('home-schedule', 0);
+}
+
+
+function renderWeekTable(containerId, weekOffset) {
+  var el = document.getElementById(containerId);
+  if (!db.meds.length) {
+    el.innerHTML = '<div class="empty" style="padding:24px">Henüz ilaç eklenmedi. <button onclick="navToIlaclar()" style="background:none;border:none;color:#93c5fd;cursor:pointer;font-size:14px;text-decoration:underline">İlaç ekle →</button></div>';
+    return;
+  }
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  var days = [];
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(today.getTime() + (weekOffset * 7 + i) * 86400000);
+    days.push(d);
+  }
+
+
+  var html = '<table style="width:100%;border-collapse:collapse;min-width:520px">';
+  html += '<thead><tr style="font-weight:700">';
+  html += '<th style="width:80px;padding:8px 6px;font-size:12px;color:#9ecfb4;font-weight:600;text-align:left;border-bottom:1px solid rgba(180,220,195,0.2)">Saat</th>';
+  days.forEach(function(d) {
+    var isToday = (d.getTime() === today.getTime());
+    html += '<th style="padding:8px 4px;font-size:12px;font-weight:600;text-align:center;border-bottom:1px solid rgba(180,220,195,0.2);' +
+      (isToday ? 'color:#7de8aa' : 'color:#9ecfb4') + '">' +
+      DAY_NAMES[d.getDay()] + '<br>' +
+      '<span style="font-size:11px;font-weight:700">' + d.getDate() + ' ' + MON_SHORT[d.getMonth()] + '</span>' +
+    '</th>';
+  });
+  html += '</tr></thead><tbody>';
+
+
+  var rows = [];
+  db.meds.forEach(function(m) {
+    var times = (m.times && m.times.length > 1) ? m.times : [m.time || '08:00'];
+    times.forEach(function(t, i) {
+      rows.push({ time: t, med: m, doseIdx: i, total: times.length });
+    });
+  });
+  rows.sort(function(a,b){ return a.time.localeCompare(b.time); });
+
+  rows.forEach(function(row) {
+    var m = row.med; var doseIdx = row.doseIdx; var t = row.time; var total = row.total;
+    var doseTag = total > 1 ? ' <span style="font-size:9px;opacity:.6">(' + (doseIdx+1) + '.doz)</span>' : '';
+    html += '<tr>';
+    html += '<td style="padding:8px 6px;font-size:13px;font-weight:600;color:#9ecfb4;vertical-align:top;border-bottom:1px solid rgba(180,220,195,0.1);white-space:nowrap">' + t + doseTag + '</td>';
+    days.forEach(function(d) {
+      var isToday = d.getTime() === today.getTime();
+      var isPast  = d < today;
+      var dateKey = d.toISOString().split('T')[0];
+      var m = row.med;
+
+      var inRange = true;
+      if (m.startDate && dateKey < m.startDate) inRange = false;
+      if (!m.forever && m.endDate && dateKey > m.endDate) inRange = false;
+
+      var cellContent = '';
+      var cellBg     = 'transparent';
+      var cellBorder = '1px solid rgba(180,220,195,0.08)';
+
+      if (!inRange) {
+        cellContent = '<span style="color:rgba(180,220,195,0.15);font-size:16px">·</span>';
+      } else {
+        var takenArr = Array.isArray(m.takenDates && m.takenDates[dateKey])
+          ? m.takenDates[dateKey]
+          : (m.takenDates && m.takenDates[dateKey] === true
+              ? new Array(total).fill(true)
+              : new Array(total).fill(false));
+        var taken = takenArr[doseIdx];
+
+        if (taken) {
+          cellBg = 'rgba(45,122,79,0.3)'; cellBorder = '1px solid rgba(45,122,79,0.4)';
+          cellContent = '<div style="font-size:11px;font-weight:700;color:#7de8aa">✓ ' + m.name + '</div>';
+        } else if (isToday) {
+          cellBg = 'rgba(192,57,43,0.25)'; cellBorder = '1px solid rgba(192,57,43,0.4)';
+          cellContent = '<div style="font-size:11px;font-weight:700;color:#f87171">' + m.name + '</div>' +
+            '<div style="font-size:10px;color:#fca5a5;margin-top:1px">ALINMASI GEREK</div>' +
+            '<button onclick="markTaken(' + m.id + ',' + doseIdx + ')" style="margin-top:4px;padding:2px 8px;background:var(--green);color:#fff;border:none;border-radius:4px;font-size:10px;cursor:pointer;font-weight:600">Aldım</button>';
+        } else if (isPast) {
+          cellBg = 'rgba(192,57,43,0.15)';
+          cellContent = '<div style="font-size:11px;color:#fca5a5">' + m.name + '</div>' +
+            '<div style="font-size:10px;color:#f87171">Alınmadı</div>';
+        } else {
+          cellBg = 'rgba(26,95,168,0.18)'; cellBorder = '1px solid rgba(26,95,168,0.25)';
+          cellContent = '<div style="font-size:11px;color:#93c5fd">' + m.name + '</div>' +
+            '<div style="font-size:10px;color:#7ab3e8;margin-top:1px">BEKLENİYOR</div>';
+        }
+      }
+
+      html += '<td style="padding:7px 5px;text-align:center;vertical-align:top;background:' + cellBg + ';border:' + cellBorder + ';border-radius:6px;min-width:78px">' + cellContent + '</td>';
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// ── Takvim Modali ──────────────────────────────────────────────────────────
+var calWeekOffset = 1;
+function openCalModal() {
+  if (document.getElementById('cal-modal')) { document.getElementById('cal-modal').remove(); return; }
+  var overlay = document.createElement('div');
+  overlay.id = 'cal-modal';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px';
+  overlay.innerHTML =
+    '<div style="background:#1a3326;border:1px solid rgba(180,220,195,0.3);border-radius:14px;padding:24px;max-width:700px;width:100%;max-height:80vh;overflow:auto;box-shadow:0 8px 32px rgba(0,0,0,.4)">' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">' +
+        '<span style="font-size:16px;font-weight:700;color:#e8f5ee">📅 İleriki Hafta Planı</span>' +
+        '<div style="display:flex;gap:8px;align-items:center">' +
+          '<button onclick="calShift(-1)" style="padding:4px 12px;background:rgba(255,255,255,0.1);color:#9ecfb4;border:none;border-radius:6px;cursor:pointer;font-size:16px">‹</button>' +
+          '<span id="cal-week-lbl" style="font-size:13px;color:#9ecfb4;min-width:140px;text-align:center"></span>' +
+          '<button onclick="calShift(1)"  style="padding:4px 12px;background:rgba(255,255,255,0.1);color:#9ecfb4;border:none;border-radius:6px;cursor:pointer;font-size:16px">›</button>' +
+          '<button onclick="closeCalModal()" style="padding:4px 10px;background:rgba(192,57,43,0.3);color:#f87171;border:none;border-radius:6px;cursor:pointer">✕</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="cal-table" style="overflow-x:auto"></div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  calWeekOffset = 1;
+  renderCalModal();
+}
+
+function closeCalModal() {
+  var m = document.getElementById('cal-modal');
+  if (m) m.remove();
+}
+
+function calShift(dir) {
+  calWeekOffset = Math.max(1, calWeekOffset + dir);
+  renderCalModal();
+}
+
+function renderCalModal() {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var weekStart = new Date(today.getTime() + calWeekOffset * 7 * 86400000);
+  var weekEnd   = new Date(weekStart.getTime() + 6 * 86400000);
+  document.getElementById('cal-week-lbl').textContent =
+    weekStart.getDate() + ' ' + MON_SHORT[weekStart.getMonth()] + ' — ' +
+    weekEnd.getDate()   + ' ' + MON_SHORT[weekEnd.getMonth()];
+  renderWeekTable('cal-table', calWeekOffset);
+}
+
+function markTaken(id, doseIdx) {
+  var m = db.meds.find(function(x){ return x.id === id; });
+  if (!m) return;
+  doseIdx = doseIdx || 0;
+  if (!m.takenDates) m.takenDates = {};
+  var todayStr = new Date().toISOString().split('T')[0];
+  var totalDoses = (m.times && m.times.length > 1) ? m.times.length : 1;
+ 
+  if (!Array.isArray(m.takenDates[todayStr])) {
+    var prev = m.takenDates[todayStr] === true;
+    m.takenDates[todayStr] = new Array(totalDoses).fill(false);
+    if (prev) m.takenDates[todayStr][0] = true;
+  }
+  m.takenDates[todayStr][doseIdx] = true;
+  m.takenToday = m.takenDates[todayStr].every(function(v){ return v; });
+  m.takenCount = (m.takenCount || 0) + 1;
+  m.lastTakenAt = new Date().toISOString();
+  saveDB();
+  updateHomeStats();
+  renderHomeSchedule(); // takvimi senkron güncelle
+  renderMedLists();
+  var doseLabel = totalDoses > 1 ? ' (' + (doseIdx+1) + '. doz ' + (m.times[doseIdx]||'') + ')' : '';
+  showNotif('ok', 'İlaç alındı', m.name + doseLabel + ' — ' + m.dose + ' kaydedildi.', 4000);
+  if (doseIdx === 0) {
+    fetchSideEffectSchedule(m).then(function(schedule) {
+      startWatcher(m, schedule);
+      renderWatchers();
+    });
+  }
+}
+
+// ============ YAN ETKİ İZLEYİCİ — AI destekli ============
+/*
+  Gemini'den şu JSON formatını istiyoruz:
+  {
+    "checks": [
+      { "minutesAfter": 20,  "severity": "warn", "message": "Baş dönmesi veya mide bulantısı başlayabilir..." },
+      { "minutesAfter": 120, "severity": "warn", "message": "Döküntü veya kaşıntı gelişirse..." },
+      { "minutesAfter": 1440,"severity": "info", "message": "24 saat gözlemi: ateş düştü mü?..." }
+    ],
+    "summary": "Bu ilaç için ilk belirtiler genellikle 20 dakika içinde..."
+  }
+*/
+async function fetchSideEffectSchedule(med) {
+  var prof = db.profile;
+  var key  = getApiKey();
+
+
+  if (!key) return defaultSchedule(med);
+
+  var prompt = 'Bir farmakolog olarak aşağıdaki hasta ve ilaç bilgisine göre yan etki izleme takvimi oluştur.\n\n' +
+    'İlaç: ' + med.name + ' ' + med.dose + ' (' + (med.type||'bilinmiyor') + ')\n' +
+    'Hasta: ' + (prof.age||'?') + ' yaş, ' + (prof.weight||'?') + ' kg, ' + (prof.height||'?') + ' cm\n' +
+    'Kronik hastalıklar: ' + (prof.diseases||'yok') + '\n' +
+    'Alerjiler: ' + (prof.allergies||'yok') + '\n\n' +
+    'Sadece aşağıdaki JSON formatında yanıt ver, başka hiçbir şey yazma:\n' +
+    '{\n' +
+    '  "checks": [\n' +
+    '    { "minutesAfter": <sayı>, "severity": "warn"|"info"|"danger", "message": "<kısa Türkçe uyarı>" },\n' +
+    '    ...\n' +
+    '  ],\n' +
+    '  "summary": "<bu ilacın yan etki başlangıç süresi hakkında 1-2 cümle>"\n' +
+    '}\n\n' +
+    'Kurallar:\n' +
+    '- minutesAfter: ilacı aldıktan kaç dakika sonra kontrol yapılacağı (gerçekçi farmakolojik süre)\n' +
+    '- 2 ile 4 arası check ekle, ilaca ve profile göre\n' +
+    '- Alerjiler varsa severity "danger" olabilir\n' +
+    '- Mesajlar kısa, net ve Türkçe olsun\n' +
+    '- Sadece JSON, markdown veya açıklama yok';
+
+  try {
+    var raw = await geminiAskJSON(prompt);
+    var parsed = JSON.parse(raw);
+    if (!parsed.checks || !parsed.checks.length) throw new Error('Boş checks');
+    return parsed;
+  } catch(e) {
+    console.warn('Yan etki takvimi alınamadı, yedek kullanılıyor:', e.message);
+    return defaultSchedule(med);
+  }
+}
+
+function defaultSchedule(med) {
+
+  var type = (med.type || '').toLowerCase();
+  var checks = [];
+  if (type.includes('antibiyotik') || type.includes('penisilin') || type.includes('amoksisilin')) {
+    checks = [
+      { minutesAfter: 30,   severity: 'warn', message: 'Mide bulantısı veya ishal başlayabilir. Bol su içtiğinizden emin olun.' },
+      { minutesAfter: 240,  severity: 'warn', message: 'Döküntü veya kaşıntı gelişirse ilacı bırakın ve doktorunuzu arayın.' },
+      { minutesAfter: 1440, severity: 'info', message: '24 saat kontrol: ateş düştü mü, genel durum nasıl?' }
+    ];
+  } else if (type.includes('ağrı') || type.includes('nsaid') || type.includes('parasetamol')) {
+    checks = [
+      { minutesAfter: 20,  severity: 'info', message: 'Mide rahatsızlığı hissedebilirsiniz. Aç karnına alındıysa dikkat edin.' },
+      { minutesAfter: 60,  severity: 'warn', message: 'Baş dönmesi veya uyku hali normal sınırlarda kalmalı.' },
+      { minutesAfter: 360, severity: 'info', message: '6 saat geçti. Ağrı geçmediyse tekrar doz alabilirsiniz (prospektüse göre).' }
+    ];
+  } else if (type.includes('tansiyon') || type.includes('kalp')) {
+    checks = [
+      { minutesAfter: 30,   severity: 'warn', message: 'Ayağa kalkarken ani baş dönmesi olabilir. Yavaş hareket edin.' },
+      { minutesAfter: 120,  severity: 'info', message: 'Tansiyonunuzu ölçün ve not alın.' },
+      { minutesAfter: 1440, severity: 'info', message: 'Sabah ölçümünü unutmayın. Düzenli kayıt tedaviye yardımcı olur.' }
+    ];
+  } else {
+    checks = [
+      { minutesAfter: 60,   severity: 'info', message: 'İlacı aldıktan sonraki ilk saatte kendinizi gözlemleyin.' },
+      { minutesAfter: 240,  severity: 'warn', message: '4 saat geçti. Beklenmedik bir belirti fark ettiniz mi?' },
+      { minutesAfter: 1440, severity: 'info', message: '24 saatlik gözlem tamamlandı. Herhangi bir not almak ister misiniz?' }
+    ];
+  }
+  return { checks: checks, summary: 'Genel yan etki profili kullanıldı (AI bağlantısı yok).' };
+}
+
+function startWatcher(med, schedule) {
+
+  db.watchers = db.watchers.filter(function(w){ return w.medId !== med.id; });
+  var now = Date.now();
+
+
+  var checks = schedule.checks.map(function(c) {
+    return {
+      minutesAfter: c.minutesAfter,
+      severity:     c.severity,
+      message:      c.message,
+      shown:        false
+    };
+  });
+
+  db.watchers.push({
+    medId:     med.id,
+    medName:   med.name,
+    medDose:   med.dose,
+    summary:   schedule.summary || '',
+    startedAt: now,
+    checks:    checks
+  });
+  saveDB();
+}
+
+function checkWatchers() {
+  var now     = Date.now();
+  var changed = false;
+
+  db.watchers.forEach(function(w) {
+    var elapsed = now - w.startedAt; 
+    (w.checks || []).forEach(function(c) {
+      if (c.shown) return;
+      var threshold = c.minutesAfter * 60 * 1000;
+      if (elapsed >= threshold) {
+        c.shown  = true;
+        changed  = true;
+        var icon = c.severity === 'danger' ? '🚨' : c.severity === 'warn' ? '⚠️' : 'ℹ️';
+        showNotif(
+          c.severity === 'danger' ? 'danger' : c.severity === 'warn' ? 'warn' : 'info',
+          icon + ' ' + w.medName + ' — ' + c.minutesAfter + '. dakika kontrolü',
+          c.message,
+          12000
+        );
+        
+        showSymptomCheck(w.medName, c.minutesAfter);
+      }
+    });
+  });
+
+  if (changed) saveDB();
+  renderWatchers();
+}
+
+function renderWatchers() {
+  var el = document.getElementById('home-watchers');
+  if (!db.watchers.length) {
+    el.innerHTML = '<div class="empty">Aktif izleme yok. İlaç aldıktan sonra burada yan etki uyarıları görünür.</div>';
+    return;
+  }
+  var now  = Date.now();
+  var html = '';
+
+  db.watchers.forEach(function(w) {
+    var elapsed  = now - w.startedAt;
+    var elapsedH = Math.floor(elapsed / 3600000);
+    var elapsedM = Math.floor((elapsed % 3600000) / 60000);
+
+    // Sıradaki gösterilmemiş check
+    var nextCheck = (w.checks || []).find(function(c){ return !c.shown; });
+    var nextLabel = nextCheck
+      ? nextCheck.minutesAfter + '. dakika kontrolü (' + Math.max(0, Math.ceil((nextCheck.minutesAfter * 60000 - elapsed) / 60000)) + ' dk sonra)'
+      : 'Tüm kontroller tamamlandı';
+
+    // Tamamlanan check sayısı
+    var doneCount  = (w.checks || []).filter(function(c){ return c.shown; }).length;
+    var totalCount = (w.checks || []).length;
+
+    // Genel renk
+    var bg = nextCheck
+      ? (nextCheck.severity === 'danger' ? 'rgba(220,50,50,0.2)' : '#fef08a')
+      : '#fef9c3';
+
+    html += '<div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:' + bg + ';border-radius:8px;margin-bottom:10px">' +
+      '<div style="font-size:22px;line-height:1">⏱️</div>' +
+      '<div style="flex:1;min-width:0">' +
+        '<div style="font-weight:800;font-size:14px;margin-bottom:2px;color:#1a1a00">' + w.medName + ' ' + (w.medDose||'') + ' izleniyor</div>' +
+        '<div style="font-size:13px;font-weight:600;color:#3a3a00;margin-bottom:4px">' +
+          'Alındı: ' + elapsedH + ' sa ' + elapsedM + ' dk önce &nbsp;·&nbsp; ' +
+          doneCount + '/' + totalCount + ' kontrol tamamlandı' +
+        '</div>' +
+        (w.summary ? '<div style="font-size:13px;font-weight:600;color:#3a3a00;margin-bottom:4px;font-style:italic">' + w.summary + '</div>' : '') +
+        '<div style="font-size:13px;font-weight:800;color:#1a1a00">Sıradaki: ' + nextLabel + '</div>' +
+        // Kontrol listesi
+        '<div style="margin-top:8px;display:flex;flex-direction:column;gap:4px">' +
+        (w.checks || []).map(function(c) {
+          var icon = c.shown ? '✓' : '○';
+          var col  = c.shown ? '#7aaa88' : (c.severity === 'danger' ? '#c0392b' : c.severity === 'warn' ? '#7a4a00' : '#1a5fa8');
+          return '<div style="font-size:12px;color:' + col + '">' + icon + ' ' + c.minutesAfter + ' dk — ' + c.message + '</div>';
+        }).join('') +
+        '</div>' +
+      '</div>' +
+      '<button class="btn btn-sm" onclick="stopWatcher(' + w.medId + ')" style="background:#92400e;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:12px">Durdur</button>' +
+    '</div>';
+  });
+
+  el.innerHTML = html;
+}
+
+// ── Belirti sorgulama bildirimi ──────────────────────────────────────────────
+function showSymptomCheck(medName, minute) {
+  var id  = 'symcheck-' + Date.now();
+  var div = document.createElement('div');
+  div.id  = id;
+  div.style.cssText = 'position:fixed;top:70px;right:16px;z-index:8000;background:#fff;color:#1a2e1a;border:2px solid #2d7a4f;border-radius:12px;padding:16px 18px;max-width:300px;box-shadow:0 4px 20px rgba(0,0,0,0.25);animation:slideIn .3s ease';
+
+  var title = document.createElement('div');
+  title.style.cssText = 'font-weight:700;font-size:14px;margin-bottom:6px';
+  title.textContent = '🔍 ' + medName + ' — ' + minute + '. dk kontrolü';
+
+  var sub = document.createElement('div');
+  sub.style.cssText = 'font-size:13px;margin-bottom:12px';
+  sub.textContent = 'Beklenmedik bir belirti fark ettiniz mi?';
+
+  var row = document.createElement('div');
+  row.style.cssText = 'display:flex;gap:8px';
+
+  var btnYes = document.createElement('button');
+  btnYes.textContent = 'Evet';
+  btnYes.style.cssText = 'flex:1;padding:7px;background:#c0392b;color:#fff;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:13px';
+  btnYes.onclick = function() { openSymptomNote(medName, minute, id); };
+
+  var btnNo = document.createElement('button');
+  btnNo.textContent = 'Hayır';
+  btnNo.style.cssText = 'flex:1;padding:7px;background:#e8f5ee;color:#2d7a4f;border:1px solid #b2ddc4;border-radius:6px;font-weight:700;cursor:pointer;font-size:13px';
+  btnNo.onclick = function() { div.remove(); };
+
+  row.appendChild(btnYes);
+  row.appendChild(btnNo);
+  div.appendChild(title);
+  div.appendChild(sub);
+  div.appendChild(row);
+  document.body.appendChild(div);
+  setTimeout(function(){ if(document.getElementById(id)) div.remove(); }, 20000);
+}
+
+// ── Belirti not paneli (sağ alt) ─────────────────────────────────────────────
+function openSymptomNote(medName, minute, checkId) {
+  if (document.getElementById('symptom-note-panel')) return;
+  var prev = document.getElementById(checkId);
+  if (prev) prev.remove();
+
+  var panel = document.createElement('div');
+  panel.id = 'symptom-note-panel';
+  panel.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9000;background:#1a3326;border:1px solid rgba(180,220,195,0.4);border-radius:14px;padding:20px;width:300px;box-shadow:0 8px 32px rgba(0,0,0,0.4)';
+
+  var h = document.createElement('div');
+  h.style.cssText = 'font-weight:700;font-size:15px;color:#e8f5ee;margin-bottom:4px';
+  h.textContent = '📝 Belirti Notu';
+
+  var sub = document.createElement('div');
+  sub.style.cssText = 'font-size:13px;color:#9ecfb4;margin-bottom:10px';
+  sub.textContent = medName + ' · ' + minute + '. dakika';
+
+  var ta = document.createElement('textarea');
+  ta.id = 'symptom-note-text';
+  ta.placeholder = 'Belirtilerinizi buraya yazın...';
+  ta.style.cssText = 'width:100%;height:90px;background:#0f2218;border:1px solid rgba(180,220,195,0.3);border-radius:8px;color:#e8f5ee;padding:8px;font-size:13px;font-family:inherit;resize:none;outline:none';
+
+  var row = document.createElement('div');
+  row.style.cssText = 'display:flex;gap:8px;margin-top:10px';
+
+  var btnSave = document.createElement('button');
+  btnSave.textContent = 'Kaydet';
+  btnSave.style.cssText = 'flex:1;padding:8px;background:var(--green);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px';
+  btnSave.onclick = function() { saveSymptomNote(medName, minute); };
+
+  var btnClose = document.createElement('button');
+  btnClose.textContent = '✕';
+  btnClose.style.cssText = 'padding:8px 12px;background:rgba(255,255,255,0.1);color:#9ecfb4;border:none;border-radius:8px;cursor:pointer;font-size:13px';
+  btnClose.onclick = function() { panel.remove(); };
+
+  row.appendChild(btnSave);
+  row.appendChild(btnClose);
+  panel.appendChild(h);
+  panel.appendChild(sub);
+  panel.appendChild(ta);
+  panel.appendChild(row);
+  document.body.appendChild(panel);
+  setTimeout(function(){ ta.focus(); }, 50);
+}
+
+function saveSymptomNote(medName, minute) {
+  var text = (document.getElementById('symptom-note-text').value || '').trim();
+  if (!text) { showNotif('warn','Uyarı','Lütfen belirtilerinizi yazın.',3000); return; }
+  if (!db.symptomNotes) db.symptomNotes = [];
+  db.symptomNotes.push({ date: new Date().toISOString(), med: medName, minute: minute, note: text });
+  saveDB();
+  document.getElementById('symptom-note-panel').remove();
+  showNotif('ok','Not kaydedildi','Belirti notunuz kaydedildi.',4000);
+  renderSymptomNotes();
+}
+
+function switchHomeTab(tab, btn) {
+  document.querySelectorAll('#page-home .tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('home-tab-izleme').style.display = tab === 'izleme' ? '' : 'none';
+  document.getElementById('home-tab-notlar').style.display = tab === 'notlar'  ? '' : 'none';
+  if (tab === 'notlar') renderSymptomNotes();
+}
+
+function renderSymptomNotes() {
+  var el = document.getElementById('home-symptom-notes');
+  if (!el) return;
+  var notes = (db.symptomNotes || []).slice().reverse();
+  if (!notes.length) {
+    el.innerHTML = '<div class="empty">Henüz kayıtlı yan etki notu yok.<br><small style="font-size:13px">Yan etki izleme bildirimindeki "Evet" butonuna basarak not ekleyebilirsiniz.</small></div>';
+    return;
+  }
+  var html = '';
+  notes.forEach(function(n, i) {
+    var d    = new Date(n.date);
+    var dateStr = d.toLocaleDateString('tr-TR', { day:'2-digit', month:'long', year:'numeric' });
+    var timeStr = d.toLocaleTimeString('tr-TR', { hour:'2-digit', minute:'2-digit' });
+    html +=
+      '<div style="padding:14px 0;border-bottom:1px solid rgba(180,220,195,0.15)' + (i===notes.length-1?';border-bottom:none':'') + '">' +
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">' +
+          '<span style="background:rgba(192,57,43,0.25);color:#f87171;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px">⚠️ ' + n.med + '</span>' +
+          '<span style="font-size:12px;color:#9ecfb4">' + dateStr + ' · ' + timeStr + '</span>' +
+          '<span style="font-size:12px;color:#7ab3e8">' + n.minute + '. dakika sonra</span>' +
+          '<button onclick="deleteSymptomNote(' + (notes.length-1-i) + ')" style="margin-left:auto;background:none;border:none;color:#f87171;cursor:pointer;font-size:14px;padding:2px 6px" title="Sil">✕</button>' +
+        '</div>' +
+        '<div style="font-size:14px;font-weight:600;color:#e8f5ee;line-height:1.6;background:rgba(255,255,255,0.05);border-radius:8px;padding:10px 12px">' + n.note + '</div>' +
+      '</div>';
+  });
+  el.innerHTML = html;
+}
+
+function deleteSymptomNote(idx) {
+  if (!db.symptomNotes) return;
+  db.symptomNotes.splice(idx, 1);
+  saveDB();
+  renderSymptomNotes();
+}
+
+function stopWatcher(medId) {
+  db.watchers = db.watchers.filter(function(w){ return w.medId !== medId; });
+  saveDB();
+  renderWatchers();
+}
+
+// ============ İLAÇ EKLE / SİL ============
+var durMode = 'range';
+
+function updateTimeInputs() {
+  var freq  = parseFloat(document.getElementById('f-freq').value);
+  var count = freq >= 1 ? Math.round(freq) : 1;
+  var wrap  = document.getElementById('time-inputs');
+  if (!wrap) return;
+ 
+  var existing = [];
+  for (var k = 0; k < 4; k++) {
+    var el = document.getElementById('f-time-' + k);
+    if (el) existing.push(el.value);
+  }
+  var defaults = ['08:00', '14:00', '20:00', '23:00'];
+  wrap.innerHTML = '';
+  for (var i = 0; i < count; i++) {
+    var val = existing[i] || defaults[i] || '08:00';
+    var lbl = count === 1 ? 'Saat' : (i + 1) + '. doz';
+    var row = document.createElement('div');
+    row.style.cssText = 'display:flex;align-items:center;gap:8px';
+    row.innerHTML =
+      '<span style="font-size:13px;font-weight:600;color:#9ecfb4;min-width:50px">' + lbl + '</span>' +
+      '<input type="time" id="f-time-' + i + '" value="' + val + '" style="max-width:140px;padding:8px 10px;border:1.5px solid rgba(180,220,195,0.3);border-radius:8px;background:#1e3a2a;color:#e8f5ee;font-size:14px">';
+    wrap.appendChild(row);
+  }
+} 
+
+function showAddForm(show) {
+  document.getElementById('add-form').style.display = show ? 'block' : 'none';
+  if (show) {
+    updateTimeInputs();
+   
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById('f-start').value = today;
+    document.getElementById('f-end').value   = '';
+    updateDatePreview();
+  }
+}
+
+function selectDurMode(mode, btn) {
+  durMode = mode;
+  document.querySelectorAll('.dur-opt').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('dur-range').style.display   = mode === 'range'   ? '' : 'none';
+  document.getElementById('dur-forever').style.display = mode === 'forever' ? '' : 'none';
+}
+
+function updateDatePreview() {
+  var s = document.getElementById('f-start').value;
+  var e = document.getElementById('f-end').value;
+  var el = document.getElementById('date-preview');
+  if (!s) { el.innerHTML = ''; return; }
+
+  var start = new Date(s + 'T00:00:00');
+  var end   = e ? new Date(e + 'T00:00:00') : start;
+  if (end < start) { el.innerHTML = '<div style="font-size:13px;color:var(--red)">Bitiş tarihi başlangıçtan önce olamaz.</div>'; return; }
+
+  var days = Math.round((end - start) / 86400000) + 1;
+  if (days > 90) { el.innerHTML = '<div style="font-size:13px;color:var(--amber)">90 günden uzun periyotlar desteklenmez.</div>'; return; }
+
+  var html = '<div style="font-size:12px;color:var(--muted);margin-bottom:6px">Toplam <strong>' + days + ' gün</strong> — tarihlerin önizlemesi:</div>';
+  html += '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+  for (var i = 0; i < days; i++) {
+    var d = new Date(start.getTime() + i * 86400000);
+    html += '<span class="prev-pill">' + d.getDate() + ' ' + MON_SHORT[d.getMonth()] + '</span>';
+  }
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function addMed() {
+  var name  = document.getElementById('f-name').value.trim();
+  var type  = document.getElementById('f-type').value.trim();
+  var dose  = document.getElementById('f-dose').value.trim();
+  var freq  = parseFloat(document.getElementById('f-freq').value);
+  var notes = document.getElementById('f-notes').value.trim();
+  var count = freq >= 1 ? Math.round(freq) : 1;
+  var times = [];
+  for (var ti = 0; ti < count; ti++) {
+    var tEl = document.getElementById('f-time-' + ti);
+    times.push(tEl ? tEl.value : '08:00');
+  }
+  var time = times[0]; // geriye dönük uyumluluk
+
+  if (!name || !dose) {
+    showNotif('danger', 'Hata', 'İlaç adı ve doz zorunludur.', 4000);
+    return;
+  }
+
+  
+  var duplicate = db.meds.find(function(m) {
+    return m.name.toLowerCase() === name.toLowerCase();
+  });
+  if (duplicate) {
+    showNotif('warn', '⚠️ İlaç zaten kayıtlı', '"' + name + '" ilacı zaten aktif listenizde bulunuyor. Önce mevcut kaydı bitirin.', 7000);
+    return;
+  }
+
+  var startDate = null, endDate = null, days = 0;
+
+  if (durMode === 'range') {
+    var s = document.getElementById('f-start').value;
+    var e = document.getElementById('f-end').value;
+    if (!s) { showNotif('danger', 'Hata', 'Başlangıç tarihi seçin.', 4000); return; }
+    startDate = s;
+    endDate   = e || s;
+    var st = new Date(s + 'T00:00:00');
+    var en = new Date(endDate + 'T00:00:00');
+    if (en < st) { showNotif('danger', 'Hata', 'Bitiş tarihi başlangıçtan önce olamaz.', 4000); return; }
+    days = Math.round((en - st) / 86400000) + 1;
+  }
+ 
+  if (durMode === 'forever') {
+    startDate = new Date().toISOString().split('T')[0];
+    endDate   = null;
+    days      = 0;
+  }
+
+
+  var takenDates = {};
+
+  var med = {
+    id:          Date.now(),
+    name:        name,
+    type:        type || 'default',
+    dose:        dose,
+    freq:        freq,
+    time:        time,
+    times:       times,
+    startDate:   startDate,
+    endDate:     endDate,
+    days:        days,
+    forever:     durMode === 'forever',
+    notes:       notes,
+    addedAt:     new Date().toISOString(),
+    takenCount:  0,
+    takenToday:  false,
+    takenDates:  takenDates,
+    lastTakenAt: null,
+    active:      true
+  };
+
+  db.meds.push(med);
+  saveDB();
+  showAddForm(false);
+  // formu temizle
+  ['f-name','f-type','f-dose','f-notes'].forEach(function(id){ document.getElementById(id).value = ''; });
+  updateTimeInputs();
+  document.getElementById('f-start').value = '';
+  document.getElementById('f-end').value   = '';
+  document.getElementById('date-preview').innerHTML = '';
+  renderMedLists();
+  showNotif('ok', 'İlaç eklendi', name + ' ilaç listesine kaydedildi.', 4000);
+}
+
+function deleteMed(id) {
+  // silmek yerine geçmişe taşı
+  var idx = db.meds.findIndex(function(m){ return m.id === id; });
+  if (idx === -1) return;
+  var med = db.meds.splice(idx, 1)[0];
+  med.active = false;
+  med.endedAt = new Date().toISOString();
+  db.pastMeds.push(med);
+  saveDB();
+  renderMedLists();
+  showNotif('info', 'İlaç tamamlandı', med.name + ' geçmişe taşındı.', 4000);
+}
+
+var medColors = ['#2d7a4f','#1a5fa8','#b45309','#7c3aed','#b91c1c'];
+var monthNames = ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
+
+function buildDayStrip(m) {
+  // Sürekli kullanım → son 14 günü göster
+  if (m.forever || !m.startDate) {
+    var today = new Date(); today.setHours(0,0,0,0);
+    var html = '<div style="font-size:12px;color:var(--muted);margin:8px 0 5px">Son 14 gün:</div><div class="day-strip">';
+    for (var i = 13; i >= 0; i--) {
+      var d = new Date(today.getTime() - i * 86400000);
+      var key = d.toISOString().split('T')[0];
+      var isToday = (i === 0);
+      var taken   = m.takenDates && m.takenDates[key];
+      var cls     = isToday ? 'day-pill dp-today' : taken ? 'day-pill dp-done' : 'day-pill dp-missed';
+      var badge   = taken ? '<div class="day-check">✓</div>' : (!isToday ? '<div class="day-x">✕</div>' : '');
+      html += '<div class="' + cls + '" title="' + key + '">' + badge +
+        '<span>' + d.getDate() + '</span>' +
+        '<span style="font-size:9px">' + MON_SHORT[d.getMonth()] + '</span>' +
+      '</div>';
+    }
+    return html + '</div>';
+  }
+
+  // Tarih aralıklı ilaç
+  var start = new Date(m.startDate + 'T00:00:00');
+  var end   = m.endDate ? new Date(m.endDate + 'T00:00:00') : start;
+  var today2 = new Date(); today2.setHours(0,0,0,0);
+  var days  = Math.round((end - start) / 86400000) + 1;
+
+  // Tarih bilgisi satırı
+  var dateInfo = '<div style="font-size:12px;color:var(--muted);margin:6px 0 3px">' +
+    start.getDate() + ' ' + MON_SHORT[start.getMonth()] + ' — ' +
+    end.getDate()   + ' ' + MON_SHORT[end.getMonth()]   +
+    ' (' + days + ' gün)</div>';
+
+  var html2 = dateInfo + '<div class="day-strip">';
+  for (var j = 0; j < days; j++) {
+    var dj    = new Date(start.getTime() + j * 86400000);
+    var keyj  = dj.toISOString().split('T')[0];
+    var isT   = dj.getTime() === today2.getTime();
+    var past  = dj < today2;
+    var taken2 = m.takenDates && m.takenDates[keyj];
+    var cls2, badge2;
+    if (isT) {
+      cls2   = 'day-pill dp-today';
+      badge2 = taken2 ? '<div class="day-check">✓</div>' : '';
+    } else if (past) {
+      cls2   = taken2 ? 'day-pill dp-done' : 'day-pill dp-missed';
+      badge2 = taken2 ? '<div class="day-check">✓</div>' : '<div class="day-x">✕</div>';
+    } else {
+      cls2   = 'day-pill dp-future';
+      badge2 = '';
+    }
+    html2 += '<div class="' + cls2 + '" title="' + keyj + '">' + badge2 +
+      '<span>' + dj.getDate() + '</span>' +
+      '<span style="font-size:9px">' + MON_SHORT[dj.getMonth()] + '</span>' +
+    '</div>';
+  }
+  return html2 + '</div>';
+}
+
+function renderMedLists() {
+  var güncelEl = document.getElementById('med-guncel-list');
+  var gecmisEl = document.getElementById('med-gecmis-list');
+
+  if (!db.meds.length) {
+    güncelEl.innerHTML = '<div class="empty">Güncel ilaç yok. Sağ üstten ekleyin.</div>';
+  } else {
+    var html = '';
+    db.meds.forEach(function(m, i) {
+      var col   = medColors[i % medColors.length];
+      var badge = m.takenToday
+        ? '<span class="badge badge-ok">Bugün alındı ✓</span>'
+        : '<span class="badge badge-warn">Bugün alınmadı</span>';
+      var foreverBadge = m.forever ? '<span class="badge badge-info" style="font-size:11px">♾️ Sürekli</span>' : '';
+
+      var times = (m.times && m.times.length > 1) ? m.times : [m.time || '08:00'];
+      var todayStr2 = new Date().toISOString().split('T')[0];
+      var takenArr2 = (m.takenDates && Array.isArray(m.takenDates[todayStr2]))
+        ? m.takenDates[todayStr2]
+        : (m.takenDates && m.takenDates[todayStr2] === true
+            ? new Array(times.length).fill(true)
+            : new Array(times.length).fill(false));
+
+      // Doz satırları
+      var doseRows = '';
+      times.forEach(function(t, di) {
+        var taken = takenArr2[di];
+        doseRows +=
+          '<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(180,220,195,0.1)">' +
+            '<span style="font-size:15px;font-weight:700;min-width:52px;color:#9ecfb4">' + t + '</span>' +
+            (taken
+              ? '<button disabled style="padding:5px 14px;background:rgba(45,122,79,0.3);color:#7de8aa;border:1px solid rgba(45,122,79,0.4);border-radius:6px;font-size:13px;font-weight:700;cursor:default">✓ Alındı</button>'
+              : '<button class="btn btn-primary btn-sm" onclick="markTaken(' + m.id + ',' + di + ')">Aldım</button>') +
+          '</div>';
+      });
+
+      html += '<div class="card" style="margin-bottom:14px;padding:16px 18px">' +
+        '<div style="display:flex;align-items:flex-start;gap:12px">' +
+          '<div style="width:4px;min-height:60px;border-radius:4px;background:' + col + ';flex-shrink:0"></div>' +
+          '<div style="flex:1;min-width:0">' +
+            '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px">' +
+              '<span style="font-size:17px;font-weight:700">' + m.name + '</span>' +
+              badge + foreverBadge +
+            '</div>' +
+            '<div style="font-size:15px;font-weight:600;color:var(--muted);margin-bottom:3px">💊 ' + m.dose + '</div>' +
+            '<div style="font-size:15px;font-weight:600;color:var(--muted);margin-bottom:3px">🔁 ' + freqLabel(m.freq) + '</div>' +
+            (m.notes ? '<div style="font-size:15px;font-weight:600;color:var(--muted);margin-bottom:3px">📝 ' + m.notes + '</div>' : '') +
+            '<div style="font-size:13px;color:var(--muted);margin-bottom:8px">' + (m.takenCount||0) + ' kez kullanıldı</div>' +
+            '<div style="margin-bottom:8px">' + doseRows + '</div>' +
+            buildDayStrip(m) +
+          '</div>' +
+          '<div style="flex-shrink:0">' +
+            '<button class="btn btn-danger btn-sm" onclick="deleteMed(' + m.id + ')">Bitir</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    güncelEl.innerHTML = html;
+  }
+
+  if (!db.pastMeds.length) {
+    gecmisEl.innerHTML = '<div class="empty">Geçmiş ilaç kaydı yok.</div>';
+  } else {
+    var html2 = '';
+    db.pastMeds.slice().reverse().forEach(function(m) {
+      html2 += '<div class="card" style="margin-bottom:12px;opacity:.7">' +
+        '<div style="display:flex;align-items:center;gap:10px">' +
+          '<div style="width:4px;height:40px;border-radius:4px;background:var(--muted);flex-shrink:0"></div>' +
+          '<div style="flex:1">' +
+            '<div style="font-weight:600">' + m.name + ' <small style="color:var(--muted);font-weight:700">' + m.dose + '</small></div>' +
+            '<div style="font-size:13px;color:var(--muted)">Toplam: ' + (m.takenCount||0) + ' kez · Bitiş: ' + fmtDate(m.endedAt) + '</div>' +
+          '</div>' +
+          '<span class="badge badge-gray">Tamamlandı</span>' +
+        '</div>' +
+      '</div>';
+    });
+    gecmisEl.innerHTML = html2;
+  }
+}
+
+function showMedTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  document.getElementById('medtab-guncel').style.display = tab === 'guncel' ? '' : 'none';
+  document.getElementById('medtab-gecmis').style.display = tab === 'gecmis'? '' : 'none';
+}
+
+function freqLabel(f) {
+  if (f == 1) return 'Günde 1';
+  if (f == 2) return 'Günde 2';
+  if (f == 3) return 'Günde 3';
+  return 'Haftada 3-4';
+}
+
+// ============ RİSK ANALİZİ ============
+function renderRiskTable() {
+  var prof = db.profile;
+  var wrap = document.getElementById('risk-table-wrap');
+  var warn = document.getElementById('risk-profile-warn');
+
+  if (!prof.name || !prof.age) {
+    warn.style.display = '';
+  } else {
+    warn.style.display = 'none';
+  }
+
+  if (!db.meds.length) {
+    wrap.innerHTML = '<div class="empty">Risk analizi için önce ilaç ekleyin.</div>';
+    return;
+  }
+
+
+  var seen = {};
+  var activeMeds = [];
+  db.meds.slice().reverse().forEach(function(m) {
+    var key = m.name.toLowerCase();
+    if (!seen[key]) { seen[key] = true; activeMeds.push(m); }
+  });
+  activeMeds.reverse();
+
+  var html = '<table class="risk-table"><thead><tr>' +
+    '<th>İlaç</th><th>Kullanım</th><th>Risk Seviyesi</th><th>Uyarı</th>' +
+    '</tr></thead><tbody>';
+
+  activeMeds.forEach(function(m) {
+    var risk = calcRisk(m, prof);
+    var tarih = m.startDate ? fmtDateShort(m.startDate) + ' başladı' + (m.endDate && !m.forever ? ' — ' + fmtDateShort(m.endDate) + ' bitiş' : '') : '—';
+    html += '<tr>' +
+      '<td><strong>' + m.name + '</strong><br><small style="color:var(--muted)">' + m.type + ' · ' + tarih + '</small></td>' +
+      '<td>' + (m.takenCount || 0) + ' kez<br><small style="color:var(--muted)">' + m.dose + '</small></td>' +
+      '<td><span class="badge badge-' + risk.level + '">' + risk.label + '</span></td>' +
+      '<td style="font-size:13px;color:var(--muted)">' + risk.msg + '</td>' +
+    '</tr>';
+  });
+
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function calcRisk(med, prof) {
+  // Basit kural tabanlı risk motoru
+  var age = parseInt(prof.age) || 0;
+  var allergies = (prof.allergies || '').toLowerCase();
+  var diseases  = (prof.diseases  || '').toLowerCase();
+  var count     = med.takenCount || 0;
+  var type      = (med.type || '').toLowerCase();
+
+  var score = 0;
+  var msgs = [];
+
+  if (age > 65) { score++; msgs.push('65+ yaş yüksek hassasiyet'); }
+  if (age > 75) { score++; msgs.push('75+ yaş çok yüksek risk'); }
+
+  if (type.includes('antibiyotik') || med.name.toLowerCase().includes('silin')) {
+    if (allergies.includes('penisilin') || allergies.includes('amoksisilin')) {
+      score += 3; msgs.push('⚠️ Penisilin alerjisi tespit edildi!');
+    }
+    if (count > 20) { score++; msgs.push('Uzun süreli antibiyotik kullanımı'); }
+  }
+
+  if (type.includes('tansiyon') || type.includes('kalp')) {
+    if (diseases.includes('böbrek')) { score++; msgs.push('Böbrek hastalığıyla dikkatli kullanım'); }
+  }
+
+  if (type.includes('ağrı') || type.includes('nsaid')) {
+    if (diseases.includes('mide') || diseases.includes('ülser')) { score++; msgs.push('Mide hassasiyeti'); }
+    if (count > 30) { score++; msgs.push('Uzun süreli kullanım — böbrek kontrolü önerilir'); }
+  }
+
+  if (score === 0) return { level: 'ok',     label: 'Düşük',   msg: msgs.join(' · ') || 'Bilinen bir risk faktörü yok.' };
+  if (score === 1) return { level: 'info',   label: 'Orta',    msg: msgs.join(' · ') };
+  if (score === 2) return { level: 'warn',   label: 'Yüksek',  msg: msgs.join(' · ') };
+  return                  { level: 'danger', label: 'Kritik!', msg: msgs.join(' · ') };
+}
+
+function analyzeRisk() {
+  // Risk tablosunu güncelle ve AI sonucunu temizle
+  renderRiskTable();
+  document.getElementById('risk-ai-result').innerHTML = '';
+  showNotif('ok', 'Risk tablosu güncellendi', 'Profil ve ilaç bilgileriniz yeniden analiz edildi.', 4000);
+}
+
+function showRiskLoading(show) {
+  var existing = document.getElementById('risk-loading-overlay');
+  if (!show) { if (existing) existing.remove(); return; }
+  if (existing) return;
+  var overlay = document.createElement('div');
+  overlay.id = 'risk-loading-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(15,30,20,0.82);backdrop-filter:blur(6px)';
+
+  var logoImg = document.createElement('img');
+  logoImg.src = document.querySelector('link[rel="icon"]').href;
+  logoImg.style.cssText = 'width:90px;height:auto;margin-bottom:20px;filter:drop-shadow(0 0 12px rgba(57,255,120,0.5)) drop-shadow(0 0 24px rgba(57,255,120,0.25))';
+
+  var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('width','64'); svg.setAttribute('height','64');
+  svg.setAttribute('viewBox','0 0 64 64');
+  svg.style.cssText = 'margin-bottom:16px';
+  var circle_bg = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle_bg.setAttribute('cx','32'); circle_bg.setAttribute('cy','32'); circle_bg.setAttribute('r','26');
+  circle_bg.setAttribute('fill','none'); circle_bg.setAttribute('stroke','rgba(57,255,120,0.15)'); circle_bg.setAttribute('stroke-width','4');
+  var circle_fill = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle_fill.setAttribute('cx','32'); circle_fill.setAttribute('cy','32'); circle_fill.setAttribute('r','26');
+  circle_fill.setAttribute('fill','none'); circle_fill.setAttribute('stroke','#39ff78'); circle_fill.setAttribute('stroke-width','4');
+  circle_fill.setAttribute('stroke-linecap','round');
+  var circumference = 2 * Math.PI * 26;
+  circle_fill.setAttribute('stroke-dasharray', circumference);
+  circle_fill.setAttribute('stroke-dashoffset', circumference);
+  circle_fill.setAttribute('transform','rotate(-90 32 32)');
+  circle_fill.style.cssText = 'transition:stroke-dashoffset 0.1s linear;filter:drop-shadow(0 0 4px rgba(57,255,120,0.7))';
+  circle_fill.id = 'risk-progress-circle';
+  svg.appendChild(circle_bg);
+  svg.appendChild(circle_fill);
+
+  var txt = document.createElement('div');
+  txt.style.cssText = 'color:#7de8aa;font-size:15px;font-weight:700;letter-spacing:0.5px;text-align:center';
+  txt.textContent = 'AI risk analizi yapılıyor...';
+
+  var sub = document.createElement('div');
+  sub.style.cssText = 'color:rgba(125,232,170,0.6);font-size:13px;margin-top:6px';
+  sub.textContent = 'Lütfen bekleyin';
+
+  overlay.appendChild(logoImg);
+  overlay.appendChild(svg);
+  overlay.appendChild(txt);
+  overlay.appendChild(sub);
+  document.body.appendChild(overlay);
+
+  var start = Date.now();
+  var duration = 20000;
+  var raf;
+  function tick() {
+    var elapsed = Date.now() - start;
+    var pct = Math.min(elapsed / duration, 0.92);
+    var offset = circumference * (1 - pct);
+    var el = document.getElementById('risk-progress-circle');
+    if (el) el.setAttribute('stroke-dashoffset', offset);
+    if (pct < 0.92) raf = requestAnimationFrame(tick);
+  }
+  raf = requestAnimationFrame(tick);
+  overlay._raf = raf;
+  overlay._circ = circumference;
+}
+
+async function runRiskAI() {
+  var btn = document.getElementById('risk-ai-btn');
+  var lbl = document.getElementById('risk-ai-lbl');
+  var res = document.getElementById('risk-ai-result');
+  btn.disabled = true;
+  lbl.innerHTML = '<span class="spinner"></span> Analiz ediliyor...';
+  res.innerHTML = '';
+  showRiskLoading(true);
+
+  var prof = db.profile;
+
+  // İlaç yoksa mesaj göster
+  if (!db.meds.length) {
+    showRiskLoading(false);
+    res.innerHTML =
+      '<div class="ai-box" style="background:rgba(255,255,255,0.05);border:2px solid rgba(180,220,195,0.3);text-align:center;padding:28px">' +
+        '<div style="font-size:18px;font-weight:700;color:#9ecfb4;letter-spacing:1px">GÜNCEL OLARAK İLAÇ KAYITLI DEĞİL</div>' +
+      '</div>';
+    btn.disabled = false; lbl.textContent = 'AI ile Değerlendir'; return;
+  }
+
+  // Her ilaç için ayrı detay satırı hazırla
+  var medList = db.meds.map(function(m, idx) {
+    var times = (m.times && m.times.length > 1) ? m.times : [m.time || '08:00'];
+    var gunlukDoz    = times.length;
+    var toplamMg     = parseFloat(m.dose) || 0;
+    var gunlukToplam = toplamMg * gunlukDoz;
+    return (idx+1) + '. ' + m.name + ' ' + m.dose +
+      ' | Günde ' + gunlukDoz + ' kez' +
+      (gunlukToplam > 0 ? ' | Günlük toplam: ' + gunlukToplam + 'mg' : '') +
+      ' | Saatler: ' + times.join(', ') +
+      ' | Tür: ' + (m.type || 'belirtilmemiş') +
+      ' | Toplam kullanım: ' + (m.takenCount || 0) + ' kez';
+  });
+
+  var medNames = db.meds.map(function(m){ return m.name; }).join(', ');
+
+  var prompt =
+    'Sen deneyimli bir klinisyen eczacı ve iç hastalıkları uzmanısın. ' +
+    'Asla genel cevap verme, verilen bilgilere özgü somut değerlendirme yap.\n\n' +
+    'HASTA PROFİLİ:\n' +
+    'Yaş: ' + (prof.age || 'bilinmiyor') + ' | ' +
+    'Boy: ' + (prof.height || '?') + 'cm | ' +
+    'Kilo: ' + (prof.weight || '?') + 'kg\n' +
+    'Kronik hastalıklar: ' + (prof.diseases || 'Yok') + '\n' +
+    'Alerjiler: ' + (prof.allergies || 'Yok') + '\n\n' +
+    'KULLANILAN İLAÇLAR (' + db.meds.length + ' adet):\n' +
+    medList.join('\n') + '\n\n' +
+    'YAPILACAK ANALİZ:\n' +
+    'Her ilacı AYRI AYRI analiz et. ' + db.meds.length + ' ilaç varsa ' + db.meds.length + ' ayrı bölüm olsun.\n' +
+    'Her ilaç bölümünde şunları yaz:\n' +
+    '  - Dozaj ve kullanım sıklığı uygun mu?\n' +
+    '  - Hastanın kronik hastalıklarıyla etkileşim riski var mı?\n' +
+    '  - Alerjilerle çakışma var mı?\n' +
+    '  - Genel risk seviyesi: DUSUK / ORTA / YUKSEK / KRİTİK\n\n' +
+    (db.meds.length > 1 ?
+      'Son bölümde ise ' + medNames + ' ilaçlarının BİRBİRİYLE ETKİLEŞİMİNİ değerlendir. ' +
+      'Tehlikeli kombinasyon varsa kırmızı ile belirt.\n\n' : '') +
+    'HTML formatında yaz. Her ilaç bölümü için:\n' +
+    '<div style="border:1px solid rgba(180,220,195,0.3);border-radius:8px;padding:14px;margin-bottom:12px">\n' +
+    '<strong style="font-size:15px">İLAÇ ADI</strong><br>...\n' +
+    '</div>\n' +
+    'Kritik riskler için <span style="color:#f87171;font-weight:bold"> kullan. ' +
+    'Düşük risk için <span style="color:#7de8aa"> kullan. ' +
+    'En sona: <br><br><em style="color:#fbbf24;font-size:15px;font-weight:700">⚠️ Bu bilgiler genel rehber niteliğinde olup kesin tıbbi tavsiye değildir. ⚠️</em>';
+
+  try {
+    var text = await geminiAsk(prompt);
+    var circ = document.getElementById('risk-progress-circle');
+    if (circ) { circ.style.transition='stroke-dashoffset 0.4s ease'; circ.setAttribute('stroke-dashoffset','0'); }
+    setTimeout(function(){
+      showRiskLoading(false);
+      res.innerHTML = '<div class="ai-label">AI Değerlendirmesi</div><div class="ai-box">' + text + '</div>';
+    }, 400);
+  } catch(e) {
+    showRiskLoading(false);
+    res.innerHTML = '<div class="ai-box" style="background:rgba(192,57,43,0.15);border-color:#f5c6c2">' + (e.message || 'Bağlantı hatası. API anahtarınızı kontrol edin.') + '</div>';
+  }
+
+  btn.disabled = false;
+  lbl.textContent = 'AI ile Değerlendir';
+}
+
+// ============ TAHLİL ============
+var tahlilParams = [
+  /* ── TAM KAN SAYIMI ── */
+  {key:'wbc',        label:'WBC — Beyaz Küre',               unit:'10³/mm³', normal:'4–10.5',              group:'hemogram', aliases:['wbc','lökosit']},
+  {key:'rbc',        label:'RBC — Kırmızı Küre',             unit:'10⁶/mm³', normal:'4.7–6',               group:'hemogram', aliases:['rbc','eritrosit']},
+  {key:'hgb',        label:'HGB — Hemoglobin',               unit:'g/dL',    normal:'E:13.5–18 K:11.7–15.5',group:'hemogram', aliases:['hgb','hb','hemoglobin']},
+  {key:'hct',        label:'HCT — Hematokrit',               unit:'%',       normal:'E:42–52 K:34.5–46.3', group:'hemogram', aliases:['hct','hematokrit']},
+  {key:'mcv',        label:'MCV — Ort. Eritrosit Hacmi',     unit:'fL',      normal:'78–100',               group:'hemogram', aliases:['mcv']},
+  {key:'mch',        label:'MCH — Ort. Eritrosit Hgb',       unit:'pg',      normal:'25–33.5',              group:'hemogram', aliases:['mch']},
+  {key:'mchc',       label:'MCHC — Ort. Hgb Konsantr.',      unit:'g/dL',    normal:'31–35.2',              group:'hemogram', aliases:['mchc']},
+  {key:'plt',        label:'PLT — Trombosit',                unit:'10³/mm³', normal:'150–450',              group:'hemogram', aliases:['plt','trombosit']},
+  {key:'mpv',        label:'MPV — Ort. Trombosit Hacmi',     unit:'fL',      normal:'3.6–12',               group:'hemogram', aliases:['mpv']},
+  {key:'rdw_cv',     label:'RDW-CV',                         unit:'%',       normal:'11–15',                group:'hemogram', aliases:['rdw-cv','rdwcv']},
+  {key:'rdw_sd',     label:'RDW-SD',                         unit:'fL',      normal:'37.8–46.1',            group:'hemogram', aliases:['rdw-sd','rdwsd']},
+  {key:'pdw',        label:'PDW',                            unit:'%',       normal:'9–16',                 group:'hemogram', aliases:['pdw']},
+  {key:'pct',        label:'PCT — Trombokrit',               unit:'%',       normal:'0–1',                  group:'hemogram', aliases:['pct']},
+  {key:'plcr',       label:'P-LCR',                          unit:'%',       normal:'',                     group:'hemogram', aliases:['p-lcr','plcr']},
+  {key:'neu_abs',    label:'NEU# / NE# — Nötrofil Mutlak',   unit:'10³/mm³', normal:'1.82–7.42',            group:'hemogram', aliases:['neu#','ne#']},
+  {key:'neu_pct',    label:'NEU% / NE% — Nötrofil',          unit:'%',       normal:'40.3–74.8',            group:'hemogram', aliases:['neu%','ne%','neu%.']},
+  {key:'lym_abs',    label:'LYM# / LY# — Lenfosit Mutlak',  unit:'10³/mm³', normal:'0.85–3.6',             group:'hemogram', aliases:['lym#','ly#']},
+  {key:'lym_pct',    label:'LYM% / LY% — Lenfosit',         unit:'%',       normal:'16.4–57.7',            group:'hemogram', aliases:['lym%','ly%','lym%.']},
+  {key:'mon_abs',    label:'MON# / MO# — Monosit Mutlak',   unit:'10³/mm³', normal:'0.19–0.8',             group:'hemogram', aliases:['mon#','mo#']},
+  {key:'mon_pct',    label:'MON% / MO% — Monosit',          unit:'%',       normal:'4.4–12.3',             group:'hemogram', aliases:['mon%','mo%']},
+  {key:'eos_abs',    label:'EOS# — Eozinofil Mutlak',        unit:'10³/mm³', normal:'0.03–0.5',             group:'hemogram', aliases:['eos#']},
+  {key:'eos_pct',    label:'EOS% / EO% — Eozinofil',        unit:'%',       normal:'0–4.4',                group:'hemogram', aliases:['eos%','eo%']},
+  {key:'bas_abs',    label:'BAS# — Bazofil Mutlak',          unit:'10³/mm³', normal:'0–0.2',                group:'hemogram', aliases:['bas#']},
+  {key:'bas_pct',    label:'BAS% / BA% — Bazofil',           unit:'%',       normal:'0–0.6',                group:'hemogram', aliases:['bas%','ba%']},
+  {key:'ig_abs',     label:'IG# — İmmatür Granülosit Mutlak',unit:'',        normal:'0–0.09',               group:'hemogram', aliases:['ig#']},
+  {key:'ig_pct',     label:'IG% — İmmatür Granülosit',       unit:'%',       normal:'0–0.6',                group:'hemogram', aliases:['ig%']},
+  {key:'nlr',        label:'Nötrofil / Lenfosit Oranı',      unit:'',        normal:'<3',                   group:'hemogram', aliases:['nötrofil/lenfosit','nlr']},
+  /* ── BİYOKİMYA ── */
+  {key:'glucose',    label:'Glukoz — Açlık Şekeri',          unit:'mg/dL',   normal:'70–100',               group:'biokimya', aliases:['glukoz','glucose']},
+  {key:'kreatinin',  label:'Kreatinin',                      unit:'mg/dL',   normal:'0.84–1.25',            group:'biokimya', aliases:['kreatinin','creatinine']},
+  {key:'egfr',       label:'eGFR — Glomerüler Filtrasyon',   unit:'mL/dk',   normal:'>90',                  group:'biokimya', aliases:['egfr','gfr','tahmini glomerüler']},
+  {key:'bun',        label:'BUN — Kan Üre Azotu',            unit:'mg/dL',   normal:'8–20',                 group:'biokimya', aliases:['bun']},
+  {key:'ure',        label:'Üre',                            unit:'mg/dL',   normal:'15–45',                group:'biokimya', aliases:['üre','ure']},
+  {key:'urik_asit',  label:'Ürik Asit',                      unit:'mg/dL',   normal:'E:3.5–7.2 K:2.3–6.1', group:'biokimya', aliases:['ürik asit','urik asit']},
+  {key:'alt',        label:'ALT — Alanin Aminotransferaz',   unit:'U/L',     normal:'0–50',                 group:'biokimya', aliases:['alt','alanin aminotransferaz']},
+  {key:'ast',        label:'AST — Aspartat Transaminaz',     unit:'U/L',     normal:'10–50',                group:'biokimya', aliases:['ast','aspartat transaminaz']},
+  {key:'alp',        label:'ALP — Alkalen Fosfataz',         unit:'U/L',     normal:'30–120',               group:'biokimya', aliases:['alp','alkalen fosfataz']},
+  {key:'ggt',        label:'GGT — Gamma GT',                 unit:'U/L',     normal:'0–32',                 group:'biokimya', aliases:['ggt','gamma glutamil']},
+  {key:'ldh',        label:'LDH — Laktik Dehidrogenaz',      unit:'U/L',     normal:'0–248',                group:'biokimya', aliases:['ldh','laktik dehidrogenaz']},
+  {key:'amilaz',     label:'Amilaz',                         unit:'U/L',     normal:'28–100',               group:'biokimya', aliases:['amilaz']},
+  {key:'albumin',    label:'Albümin',                        unit:'g/dL',    normal:'3.5–5.3',              group:'biokimya', aliases:['albümin','albumin']},
+  {key:'protein',    label:'Total Protein',                  unit:'g/dL',    normal:'6.6–8.3',              group:'biokimya', aliases:['protein','total protein']},
+  {key:'bili_t',     label:'Bilirubin Total',                unit:'mg/dL',   normal:'0.1–1',                group:'biokimya', aliases:['bilirubin total','bilirubin, total']},
+  {key:'bili_d',     label:'Bilirubin Direkt',               unit:'mg/dL',   normal:'0.1–0.4',              group:'biokimya', aliases:['bilirubin direkt','bilirubin (direkt)']},
+  {key:'kalsiyum',   label:'Kalsiyum',                       unit:'mg/dL',   normal:'8.8–10.6',             group:'biokimya', aliases:['kalsiyum','calcium']},
+  {key:'fosfor',     label:'Fosfor',                         unit:'mg/dL',   normal:'2.5–4.5',              group:'biokimya', aliases:['fosfor','phosphorus']},
+  {key:'magnezyum',  label:'Magnezyum',                      unit:'mg/dL',   normal:'1.9–2.5',              group:'biokimya', aliases:['magnezyum','magnesium']},
+  {key:'demir',      label:'Demir',                          unit:'µg/dL',   normal:'37–145',               group:'biokimya', aliases:['demir','iron']},
+  {key:'tibc',       label:'Demir Bağlama Kapasitesi',       unit:'µg/dL',   normal:'110–359',              group:'biokimya', aliases:['demir bağlama','tibc']},
+  {key:'ferritin',   label:'Ferritin',                       unit:'µg/L',    normal:'E:24–336 K:13–150',    group:'biokimya', aliases:['ferritin']},
+  {key:'crp',        label:'CRP — C Reaktif Protein',        unit:'mg/L',    normal:'<5',                   group:'biokimya', aliases:['crp','c reaktif']},
+  {key:'sedim',      label:'Sedimantasyon 1h',               unit:'mm/Saat', normal:'0–20',                 group:'biokimya', aliases:['sedimantasyon','esr']},
+  {key:'rf',         label:'RF — Romatoid Faktör',           unit:'IU/mL',   normal:'0–14',                 group:'biokimya', aliases:['rf','romatoid faktör']},
+  {key:'hba1c',      label:'HbA1c — Glikozile Hemoglobin',   unit:'%',       normal:'<5.7',                 group:'biokimya', aliases:['hba1c','hb a1c']},
+  {key:'insulin',    label:'İnsülin (Açlık)',                unit:'µU/mL',   normal:'2–25',                 group:'biokimya', aliases:['insülin','insulin']},
+  {key:'prothrombin',label:'Protrombin Zamanı (PT)',         unit:'sn',      normal:'11–13.5',              group:'biokimya', aliases:['pt','protrombin']},
+  {key:'inr',        label:'INR',                            unit:'',        normal:'0.8–1.2',              group:'biokimya', aliases:['inr']},
+  {key:'aptt',       label:'aPTT',                           unit:'sn',      normal:'25–38',                group:'biokimya', aliases:['aptt']},
+  {key:'fibrinogen', label:'Fibrinojen',                     unit:'mg/dL',   normal:'200–400',              group:'biokimya', aliases:['fibrinojen','fibrinogen']},
+  {key:'d_dimer',    label:'D-Dimer',                        unit:'µg/L',    normal:'<500',                 group:'biokimya', aliases:['d-dimer','d dimer']},
+  {key:'hemoliz',    label:'Hemoliz İndeksi',                unit:'',        normal:'0–0.99',               group:'biokimya', aliases:['hemoliz']},
+  {key:'ikter',      label:'İkter İndeksi',                  unit:'',        normal:'0–0.99',               group:'biokimya', aliases:['ikter']},
+  {key:'lipemi',     label:'Lipemi İndeksi',                 unit:'',        normal:'0–0.99',               group:'biokimya', aliases:['lipemi']},
+  {key:'psa',        label:'PSA',                            unit:'ng/mL',   normal:'<4',                   group:'biokimya', aliases:['psa']},
+  {key:'ca125',      label:'CA 125',                         unit:'U/mL',    normal:'<35',                  group:'biokimya', aliases:['ca 125','ca125']},
+  {key:'ca199',      label:'CA 19-9',                        unit:'U/mL',    normal:'<37',                  group:'biokimya', aliases:['ca 19-9','ca199']},
+  {key:'cea',        label:'CEA',                            unit:'ng/mL',   normal:'<3',                   group:'biokimya', aliases:['cea']},
+  {key:'afp',        label:'AFP — Alfa Fetoprotein',         unit:'ng/mL',   normal:'<10',                  group:'biokimya', aliases:['afp','alfa fetoprotein']},
+  /* ── LİPİD ── */
+  {key:'kolesterol',  label:'Total Kolesterol',              unit:'mg/dL',   normal:'<200',                 group:'lipid',    aliases:['kolesterol','total kolesterol']},
+  {key:'hdl',         label:'HDL Kolesterol',                unit:'mg/dL',   normal:'>45',                  group:'lipid',    aliases:['hdl']},
+  {key:'ldl',         label:'LDL Kolesterol',                unit:'mg/dL',   normal:'<130',                 group:'lipid',    aliases:['ldl','ldl kolesterol']},
+  {key:'trigliserid', label:'Trigliserid',                   unit:'mg/dL',   normal:'<203',                 group:'lipid',    aliases:['trigliserid']},
+  {key:'vldl',        label:'VLDL Kolesterol',               unit:'mg/dL',   normal:'<30',                  group:'lipid',    aliases:['vldl']},
+  /* ── TİROİD & VİTAMİN & HORMON ── */
+  {key:'tsh',         label:'TSH',                           unit:'mIU/L',   normal:'0.27–4.2',             group:'tiroid',   aliases:['tsh']},
+  {key:'ft4',         label:'Serbest T4 (FT4)',              unit:'ng/dL',   normal:'0.93–1.7',             group:'tiroid',   aliases:['ft4','serbest t4']},
+  {key:'ft3',         label:'Serbest T3 (FT3)',              unit:'pg/mL',   normal:'2.3–4.2',              group:'tiroid',   aliases:['ft3','serbest t3']},
+  {key:'t4',          label:'Total T4',                      unit:'µg/dL',   normal:'5.1–14.1',             group:'tiroid',   aliases:['total t4','t4']},
+  {key:'t3',          label:'Total T3',                      unit:'ng/dL',   normal:'80–200',               group:'tiroid',   aliases:['total t3','t3']},
+  {key:'b12',         label:'Vitamin B12',                   unit:'ng/L',    normal:'197–771',              group:'tiroid',   aliases:['b12','vitamin b12']},
+  {key:'vit_d',       label:'D Vitamini (25-OH)',            unit:'ng/mL',   normal:'20–50',                group:'tiroid',   aliases:['d vitamini','25-oh','vitamin d']},
+  {key:'vit_b9',      label:'Folat / B9 Vitamini',           unit:'ng/mL',   normal:'>3',                   group:'tiroid',   aliases:['folat','b9','folik asit']},
+  {key:'beta_hcg',    label:'Beta-hCG',                      unit:'IU/L',    normal:'<5.3',                 group:'tiroid',   aliases:['beta-hcg','beta hcg']},
+  {key:'prolaktin',   label:'Prolaktin',                     unit:'ng/mL',   normal:'E:3–15 K:3–30',        group:'tiroid',   aliases:['prolaktin','prolactin']},
+  {key:'lh',          label:'LH — Lüteinize Hormon',         unit:'mIU/mL',  normal:'E:2–9 K:faz',          group:'tiroid',   aliases:['lh']},
+  {key:'fsh',         label:'FSH — Folikül Uyarıcı',         unit:'mIU/mL',  normal:'E:2–12 K:faz',         group:'tiroid',   aliases:['fsh']},
+  {key:'estradiol',   label:'Estradiol (E2)',                 unit:'pg/mL',   normal:'K:faz E:20–55',        group:'tiroid',   aliases:['estradiol','e2']},
+  {key:'testosteron', label:'Testosteron',                   unit:'ng/dL',   normal:'E:280–1100 K:15–70',   group:'tiroid',   aliases:['testosteron','testosterone']},
+  {key:'kortizol',    label:'Kortizol',                      unit:'µg/dL',   normal:'sabah:6–23',           group:'tiroid',   aliases:['kortizol','cortisol']},
+  {key:'dhea_s',      label:'DHEA-S',                        unit:'µg/dL',   normal:'E:70–490 K:35–430',    group:'tiroid',   aliases:['dhea-s','dheas']},
+];
+
+function buildTahlilFields() {
+  var wrap = document.getElementById('tahlil-fields');
+  if (!wrap) return;
+  var groups = {
+    hemogram: { label: '🩸 Tam Kan Sayımı (Hemogram)', params: [] },
+    biokimya: { label: '🧪 Biyokimya',                  params: [] },
+    lipid:    { label: '💛 Lipid Profili',               params: [] },
+    tiroid:   { label: '🦋 Tiroid & Vitamin & Hormon',  params: [] }
+  };
+  tahlilParams.forEach(function(p) {
+    var g = p.group || 'biokimya';
+    if (!groups[g]) groups[g] = { label: g, params: [] };
+    groups[g].params.push(p);
+  });
+
+  var html = '';
+  Object.keys(groups).forEach(function(gk) {
+    var g = groups[gk];
+    if (!g.params.length) return;
+    html += '<div style="margin-bottom:18px">' +
+      '<div style="font-size:13px;font-weight:700;color:#9ecfb4;padding:7px 0;border-bottom:1px solid rgba(180,220,195,0.25);margin-bottom:10px;letter-spacing:0.3px">' + g.label + '</div>' +
+      '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px">';
+    g.params.forEach(function(p) {
+      var shortLabel = p.label.split('—')[0].trim();
+      var unit       = p.unit ? ' (' + p.unit + ')' : '';
+      html +=
+        '<div>' +
+          '<label style="font-size:10px;margin-bottom:3px;display:block;line-height:1.3">' + shortLabel + unit + '</label>' +
+          '<input type="number" step="0.001" id="tf-' + p.key + '" placeholder="' + (p.normal || '') + '" style="width:100%">' +
+        '</div>';
+    });
+    html += '</div></div>';
+  });
+  wrap.innerHTML = html;
+}
+
+function handleFile(input) {
+  if (!input.files[0]) return;
+  var file = input.files[0];
+  document.getElementById('file-name').textContent = '📎 ' + file.name;
+  if (file.type === 'application/pdf') {
+    autoFillFromPDF(file);
+  }
+}
+
+function showPDFLoading(show) {
+  var existing = document.getElementById('pdf-loading-overlay');
+  if (!show) { if (existing) existing.remove(); return; }
+  if (existing) return;
+  var overlay = document.createElement('div');
+  overlay.id = 'pdf-loading-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(15,30,20,0.82);backdrop-filter:blur(6px)';
+
+  // Logo
+  var logoImg = document.createElement('img');
+  logoImg.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCA0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQwIj4KICA8IS0tIEhhcCBnw7Z2ZGVzaSAtIHNvbCB5YXLEsW0gKGJleWF6KSAtLT4KICA8cmVjdCB4PSIyIiB5PSI4IiB3aWR0aD0iMzYiIGhlaWdodD0iMjQiIHJ4PSIxMiIgcnk9IjEyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gSGFwIGfDtnZkZXNpIC0gc2HEnyB5YXLEsW0gKHllxZ9pbCkgLS0+CiAgPGNsaXBQYXRoIGlkPSJyaWdodEhhbGYiPgogICAgPHJlY3QgeD0iMjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPgogIDwvY2xpcFBhdGg+CiAgPHJlY3QgeD0iMiIgeT0iOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjI0IiByeD0iMTIiIHJ5PSIxMiIgZmlsbD0iIzJkOWU1ZiIgY2xpcC1wYXRoPSJ1cmwoI3JpZ2h0SGFsZikiLz4KICA8IS0tIEhhcCBvcnRhIMOnaXpnaXNpIC0tPgogIDxsaW5lIHgxPSIyMCIgeTE9IjkiIHgyPSIyMCIgeTI9IjMxIiBzdHJva2U9InJnYmEoMCwwLDAsMC4xMikiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwhLS0gSGFwIMO8c3QgcGFybGFtYXPEsSAtLT4KICA8cmVjdCB4PSI2IiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4yNSIvPgoKICA8IS0tICsgacWfYXJldGkgKHllxZ9pbCwgaGFwxLFuIHNhxJ/EsW5hIGJpdGnFn2lrLCB0cmFuc3BhcmFuIGdlw6dpxZ8pIC0tPgogIDwhLS0gKyB5YXRheSBrb2wgLS0+CiAgPHJlY3QgeD0iNDMiIHk9IjE3IiB3aWR0aD0iMTYiIGhlaWdodD0iNiIgcng9IjMiIGZpbGw9IiMzOWQwNjgiIG9wYWNpdHk9IjAuOTIiLz4KICA8IS0tICsgZGlrZXkga29sIC0tPgogIDxyZWN0IHg9IjQ4IiB5PSIxMiIgd2lkdGg9IjYiIGhlaWdodD0iMTYiIHJ4PSIzIiBmaWxsPSIjMzlkMDY4IiBvcGFjaXR5PSIwLjkyIi8+CgogIDwhLS0gVHJhbnNwYXJhbiBnZcOnacWfIG92ZXJsYXk6IGhhcCBpbGUgKyBhcmFzxLFuZGEgLS0+CiAgPHJlY3QgeD0iMzQiIHk9IjE1IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIzIgogICAgICAgIGZpbGw9InVybCgjdHJhbnNHcmFkKSIgb3BhY2l0eT0iMC41NSIvPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ0cmFuc0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkOWU1ZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzlkMDY4IiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgo8L3N2Zz4K';
+  logoImg.style.cssText = 'width:90px;height:auto;margin-bottom:20px;filter:drop-shadow(0 0 12px rgba(57,255,120,0.5)) drop-shadow(0 0 24px rgba(57,255,120,0.25))';
+
+  // SVG süre dolma çemberi
+  var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('width','64'); svg.setAttribute('height','64');
+  svg.setAttribute('viewBox','0 0 64 64');
+  svg.style.cssText = 'margin-bottom:16px';
+  var circle_bg = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle_bg.setAttribute('cx','32'); circle_bg.setAttribute('cy','32'); circle_bg.setAttribute('r','26');
+  circle_bg.setAttribute('fill','none'); circle_bg.setAttribute('stroke','rgba(57,255,120,0.15)'); circle_bg.setAttribute('stroke-width','4');
+  var circle_fill = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  circle_fill.setAttribute('cx','32'); circle_fill.setAttribute('cy','32'); circle_fill.setAttribute('r','26');
+  circle_fill.setAttribute('fill','none'); circle_fill.setAttribute('stroke','#39ff78'); circle_fill.setAttribute('stroke-width','4');
+  circle_fill.setAttribute('stroke-linecap','round');
+  var circumference = 2 * Math.PI * 26;
+  circle_fill.setAttribute('stroke-dasharray', circumference);
+  circle_fill.setAttribute('stroke-dashoffset', circumference);
+  circle_fill.setAttribute('transform','rotate(-90 32 32)');
+  circle_fill.style.cssText = 'transition:stroke-dashoffset 0.1s linear;filter:drop-shadow(0 0 4px rgba(57,255,120,0.7))';
+  circle_fill.id = 'pdf-progress-circle';
+  svg.appendChild(circle_bg);
+  svg.appendChild(circle_fill);
+
+  var txt = document.createElement('div');
+  txt.style.cssText = 'color:#7de8aa;font-size:15px;font-weight:700;letter-spacing:0.5px;text-align:center';
+  txt.textContent = 'PDF okunuyor, değerler dolduruluyor...';
+
+  var sub = document.createElement('div');
+  sub.style.cssText = 'color:rgba(125,232,170,0.6);font-size:13px;margin-top:6px';
+  sub.textContent = 'Lütfen bekleyin';
+
+  overlay.appendChild(logoImg);
+  overlay.appendChild(svg);
+  overlay.appendChild(txt);
+  overlay.appendChild(sub);
+  document.body.appendChild(overlay);
+
+  // Animasyonlu dolma
+  var start = Date.now();
+  var duration = 15000; // maks 15sn
+  var raf;
+  function tick() {
+    var elapsed = Date.now() - start;
+    var pct = Math.min(elapsed / duration, 0.92); // %92'de dur, AI bitince %100
+    var offset = circumference * (1 - pct);
+    var el = document.getElementById('pdf-progress-circle');
+    if (el) el.setAttribute('stroke-dashoffset', offset);
+    if (pct < 0.92) raf = requestAnimationFrame(tick);
+  }
+  raf = requestAnimationFrame(tick);
+  overlay._raf = raf;
+  overlay._circ = circumference;
+}
+
+async function autoFillFromPDF(file) {
+  if (!getApiKey()) { showNotif('warn','API Anahtarı Yok','PDF okumak için Gemini API anahtarı gerekli.',5000); return; }
+  showPDFLoading(true);
+  try {
+    // PDF'yi base64'e çevir
+    var b64 = await new Promise(function(res,rej){
+      var r = new FileReader();
+      r.onload = function(){ res(r.result.split(',')[1]); };
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    var keys = tahlilParams.map(function(p){ return p.key + ' (' + p.label + ')'; }).join(', ');
+    var prompt = [
+      'Bu bir kan tahlili PDF dosyasidir. Asagidaki degerleri tespit et, SADECE JSON formatinda dondur:',
+      '{"glucose":null,"hemoglobin":null,"wbc":null,"ferritin":null,"b12":null,"d":null,"tsh":null,"cholesterol":null}',
+      'Aranacak: ' + keys,
+      'PDF deki her degeri sayisal yaz, bulunamayanlar null. Sadece JSON.'
+    ].join(' ');
+
+    var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + GEMINI_MODEL + ':generateContent?key=' + getApiKey();
+    var body = {
+      contents: [{ parts: [
+        { inline_data: { mime_type: 'application/pdf', data: b64 } },
+        { text: prompt }
+      ]}],
+      generationConfig: { maxOutputTokens: 300 }
+    };
+    var resp = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+    var data = await resp.json();
+    var raw  = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0]
+               ? data.candidates[0].content.parts[0].text : '';
+    var clean = raw.replace(/```json/gi,'').replace(/```/g,'').trim();
+    var match = clean.match(/\{[\s\S]*\}/);
+    if (match) {
+      var vals = JSON.parse(match[0]);
+      // Çemberi %100'e tamamla
+      var circ = document.getElementById('pdf-progress-circle');
+      if (circ) { circ.style.transition='stroke-dashoffset 0.4s ease'; circ.setAttribute('stroke-dashoffset','0'); }
+      setTimeout(function(){
+        showPDFLoading(false);
+        // Form alanlarını doldur
+        var filled = 0;
+        Object.keys(vals).forEach(function(key){
+          if (vals[key] !== null && vals[key] !== undefined) {
+            var el = document.getElementById('tf-' + key);
+            if (el) { el.value = vals[key]; filled++; }
+          }
+        });
+        showNotif('ok','PDF Okundu',''+filled+' değer otomatik dolduruldu. Kontrol edip kaydedin.', 6000);
+      }, 500);
+    } else {
+      throw new Error('Değer okunamadı');
+    }
+  } catch(e) {
+    showPDFLoading(false);
+    showNotif('warn','PDF Okunamadı', e.message || 'Değerler otomatik doldurulamadı. Manuel girin.', 6000);
+  }
+}
+
+function saveTahlil() {
+  var vals = {};
+  var hasAny = false;
+  tahlilParams.forEach(function(p) {
+    var v = document.getElementById('tf-' + p.key).value;
+    if (v !== '') { vals[p.key] = parseFloat(v); hasAny = true; }
+  });
+  if (!hasAny) {
+    showNotif('danger', 'Hata', 'En az bir değer girin.', 4000);
+    return;
+  }
+  db.tahliller.push({ id: Date.now(), date: new Date().toISOString(), values: vals });
+  saveDB();
+  clearTahlilForm();
+  renderTahlilHistory();
+  showNotif('ok', 'Tahlil kaydedildi', 'Veriler geçmişe eklendi.', 4000);
+}
+
+function clearTahlilForm() {
+  tahlilParams.forEach(function(p){ var el = document.getElementById('tf-'+p.key); if(el) el.value=''; });
+  document.getElementById('file-name').textContent = '';
+}
+
+function deleteTahlil(id) {
+  db.tahliller = db.tahliller.filter(function(t){ return t.id !== id; });
+  saveDB();
+  renderTahlilHistory();
+  showNotif('ok', 'Tahlil silindi', 'Seçilen tahlil kaydı kaldırıldı.', 3000);
+}
+
+function deleteAllTahlil() {
+  if (!db.tahliller.length) return;
+  db.tahliller = [];
+  saveDB();
+  renderTahlilHistory();
+  showNotif('ok', 'Tüm tahliller silindi', 'Tahlil geçmişi temizlendi.', 3000);
+}
+
+function renderTahlilHistory() {
+  var el = document.getElementById('tahlil-history');
+  if (!db.tahliller.length) {
+    el.innerHTML = '<div class="empty">Henüz tahlil kaydı yok.</div>';
+    return;
+  }
+
+  var html = '';
+  var list  = db.tahliller.slice().reverse();
+
+  list.forEach(function(t, i) {
+    var prev = i < list.length - 1 ? list[i+1] : null;
+    html += '<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border)">';
+    html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">' +
+      '<div style="font-weight:700;font-size:14px">📅 ' + fmtDate(t.date) + '</div>' +
+      '<button class="btn btn-danger btn-sm" onclick="deleteTahlil(' + t.id + ')">Sil</button>' +
+    '</div>';
+    html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px">';
+
+    tahlilParams.forEach(function(p) {
+      if (!(p.key in t.values)) return;
+      var val = t.values[p.key];
+      var diff = '';
+      if (prev && p.key in prev.values) {
+        var d = (val - prev.values[p.key]).toFixed(1);
+        var arrow = d > 0 ? '↑' : d < 0 ? '↓' : '→';
+        var col   = d > 0 ? 'var(--amber)' : 'var(--blue)';
+        diff = ' <span style="color:' + col + ';font-size:12px">' + arrow + ' ' + Math.abs(d) + '</span>';
+      }
+      html += '<div style="font-size:13px;padding:6px 8px;background:var(--gray-l);border-radius:6px">' +
+        '<span style="color:var(--muted)">' + p.label.split(' ')[0] + ':</span> ' +
+        '<strong>' + val + '</strong>' + diff +
+      '</div>';
+    });
+
+    html += '</div></div>';
+  });
+
+  el.innerHTML = html;
+}
+
+async function runTahlilAI() {
+  var btn = document.getElementById('tahlil-ai-btn');
+  var lbl = document.getElementById('tahlil-ai-lbl');
+  var res = document.getElementById('tahlil-ai-result');
+  if (db.tahliller.length < 1) {
+    showNotif('warn', 'Uyarı', 'En az bir tahlil kaydı olmalı.', 4000);
+    return;
+  }
+  btn.disabled = true;
+  lbl.innerHTML = '<span class="spinner"></span> Analiz ediliyor...';
+  res.innerHTML = '';
+
+  var prof   = db.profile;
+  var last   = db.tahliller[db.tahliller.length - 1];
+  var prev   = db.tahliller.length > 1 ? db.tahliller[db.tahliller.length - 2] : null;
+
+  var lastStr = tahlilParams.filter(function(p){ return p.key in last.values; })
+    .map(function(p){ return p.label + ': ' + last.values[p.key]; }).join(', ');
+
+  var prevStr = prev ? tahlilParams.filter(function(p){ return p.key in prev.values; })
+    .map(function(p){ return p.label + ': ' + prev.values[p.key]; }).join(', ') : 'Yok';
+
+  var prompt = 'Sen diyetisyen bir doktorsun. Hasta tahlil sonuçlarını değerlendir ve beslenme önerisi ver.\n\n' +
+    'Hasta: ' + (prof.age||'?') + ' yaş, ' + (prof.weight||'?') + 'kg\n' +
+    'Alerjiler: ' + (prof.allergies||'Yok') + '\n' +
+    'Kronik hastalıklar: ' + (prof.diseases||'Yok') + '\n\n' +
+    'Son tahlil (' + fmtDate(last.date) + '): ' + lastStr + '\n' +
+    'Önceki tahlil: ' + prevStr + '\n\n' +
+    'Lütfen:\n1. Dikkat çekici değerleri yorumla\n2. Önceki tahlile göre değişimleri belirt\n3. Hastanın alerjenlerini dikkate alarak eksik besinleri karşılayacak somut beslenme önerileri ver\n' +
+    'HTML formatında yaz. Mutlaka "Bu bilgiler tıbbi tavsiye değildir, doktorunuza danışın." ekle.';
+
+  try {
+    var text = await geminiAsk(prompt);
+    res.innerHTML = '<div class="ai-label" style="margin-top:14px">AI Beslenme Değerlendirmesi</div><div class="ai-box">' + text + '</div>';
+  } catch(e) {
+    res.innerHTML = '<div class="ai-box" style="background:var(--red-l);border-color:#f5c6c2">' + (e.message || 'Bağlantı hatası.') + '</div>';
+  }
+
+  btn.disabled = false;
+  lbl.textContent = 'Öneri Al';
+}
+
+// ============ PROFİL ============
+function saveProfile() {
+  db.profile = {
+    name:         document.getElementById('p-name').value.trim(),
+    age:          document.getElementById('p-age').value,
+    height:       document.getElementById('p-height').value,
+    weight:       document.getElementById('p-weight').value,
+    blood:        document.getElementById('p-blood').value,
+    gender:       document.getElementById('p-gender').value,
+    diseases:     document.getElementById('p-diseases').value.trim(),
+    allergies:    document.getElementById('p-allergies').value.trim(),
+    chronicMeds:  document.getElementById('p-chronic-meds').value.trim()
+  };
+  saveDB();
+  renderProfileSummary();
+  document.getElementById('profile-msg').innerHTML =
+    '<div class="badge badge-ok" style="font-size:14px;padding:8px 14px">✓ Profil kaydedildi</div>';
+  setTimeout(function(){ document.getElementById('profile-msg').innerHTML = ''; }, 3000);
+}
+
+function loadProfile() {
+  var p = db.profile;
+  document.getElementById('p-name').value         = p.name         || '';
+  document.getElementById('p-age').value          = p.age          || '';
+  document.getElementById('p-height').value       = p.height       || '';
+  document.getElementById('p-weight').value       = p.weight       || '';
+  document.getElementById('p-blood').value        = p.blood        || '';
+  document.getElementById('p-gender').value       = p.gender       || '';
+  document.getElementById('p-diseases').value     = p.diseases     || '';
+  document.getElementById('p-allergies').value    = p.allergies    || '';
+  document.getElementById('p-chronic-meds').value = p.chronicMeds  || '';
+}
+
+function renderProfileSummary() {
+  var p = db.profile;
+  var el = document.getElementById('profile-summary');
+  if (!p.name) { el.innerHTML = '<div class="empty">Profil henüz doldurulmadı.</div>'; return; }
+  var bmi = '';
+  if (p.height && p.weight) {
+    var b = (p.weight / Math.pow(p.height/100, 2)).toFixed(1);
+    var cat = b < 18.5 ? 'Zayıf' : b < 25 ? 'Normal' : b < 30 ? 'Fazla kilolu' : 'Obez';
+    bmi = b + ' (' + cat + ')';
+  }
+  el.innerHTML =
+    '<div class="info-row"><span class="info-key">Ad</span><span class="info-val">' + p.name + '</span></div>' +
+    '<div class="info-row"><span class="info-key">Yaş / Boy / Kilo</span><span class="info-val">' + (p.age||'—') + ' yaş · ' + (p.height||'—') + ' cm · ' + (p.weight||'—') + ' kg</span></div>' +
+    (bmi ? '<div class="info-row"><span class="info-key">BMI</span><span class="info-val">' + bmi + '</span></div>' : '') +
+    (p.blood  ? '<div class="info-row"><span class="info-key">Kan Grubu</span><span class="info-val">' + p.blood + '</span></div>' : '') +
+    (p.gender ? '<div class="info-row"><span class="info-key">Cinsiyet</span><span class="info-val">' + (p.gender === 'erkek' ? 'Erkek' : p.gender === 'kadin' ? 'Kadın' : 'Diğer') + '</span></div>' : '') +
+    '<div class="info-row"><span class="info-key">Kronik hastalıklar</span><span class="info-val">' + (p.diseases||'—') + '</span></div>' +
+    '<div class="info-row"><span class="info-key">Alerjiler</span><span class="info-val">' + (p.allergies||'—') + '</span></div>';
+}
+
+function renderUsageHistory() {
+  var el = document.getElementById('usage-history');
+  var active = db.meds.filter(function(m){ return m.takenCount > 0; });
+  var past   = db.pastMeds.filter(function(m){ return m.takenCount > 0; });
+
+  if (!active.length && !past.length) {
+    el.innerHTML = '<div class="empty">Henüz ilaç kullanım kaydı yok.</div>';
+    return;
+  }
+
+  var html = '';
+
+  // Aktif ilaçlar
+  active.forEach(function(m) {
+    html += '<div class="history-item">' +
+      '<div class="history-date" style="color:#7de8aa">Aktif · ' + m.type + '</div>' +
+      '<div class="history-text"><strong>' + m.name + '</strong> ' + m.dose +
+      ' · <strong>' + (m.takenCount||0) + ' kez</strong> kullanıldı' +
+      (m.notes ? ' · ' + m.notes : '') + '</div>' +
+    '</div>';
+  });
+
+  // Biten ilaçlar — accordion
+  if (past.length) {
+    html += '<div style="margin-top:10px">' +
+      '<button onclick="togglePastHistory(this)" style="display:flex;align-items:center;gap:8px;width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(180,220,195,0.2);border-radius:8px;padding:10px 14px;cursor:pointer;color:#9ecfb4;font-size:14px;font-weight:600;text-align:left">' +
+        '<span id="past-arrow">▶</span> Biten İlaçlar <span style="background:rgba(255,255,255,0.1);border-radius:20px;padding:1px 8px;font-size:12px">' + past.length + '</span>' +
+      '</button>' +
+      '<div id="past-history-list" style="display:none;margin-top:4px;border:1px solid rgba(180,220,195,0.15);border-radius:8px;overflow:hidden">';
+    past.forEach(function(m) {
+      html += '<div class="history-item" style="padding:10px 14px;border-bottom:1px solid rgba(180,220,195,0.1)">' +
+        '<div class="history-date">Bitiş: ' + fmtDate(m.endedAt) + ' · ' + m.type + '</div>' +
+        '<div class="history-text"><strong>' + m.name + '</strong> ' + m.dose +
+        ' · <strong>' + (m.takenCount||0) + ' kez</strong> kullanıldı' +
+        (m.notes ? ' · ' + m.notes : '') + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  el.innerHTML = html;
+}
+
+function togglePastHistory(btn) {
+  var list  = document.getElementById('past-history-list');
+  var arrow = document.getElementById('past-arrow');
+  var open  = list.style.display !== 'none';
+  list.style.display  = open ? 'none' : 'block';
+  arrow.textContent   = open ? '▶' : '▼';
+}
+
+function clearUsageHistory() {
+  if (!confirm('İlaç kullanım geçmişini silmek istediğinizden emin misiniz?')) return;
+  db.pastMeds = db.pastMeds.filter(function(m){ return !m.takenCount || m.takenCount === 0; });
+  db.meds.forEach(function(m){ m.takenCount = 0; m.takenDates = {}; });
+  saveDB();
+  renderUsageHistory();
+  showNotif('ok', 'Geçmiş silindi', 'İlaç kullanım geçmişi temizlendi.', 3000);
+}
+
+function clearPastMeds() {
+  if (!db.pastMeds.length) return;
+  if (!confirm('Geçmiş ilaç listesini tamamen silmek istediğinizden emin misiniz?')) return;
+  db.pastMeds = [];
+  saveDB();
+  renderMedLists();
+  renderUsageHistory();
+  showNotif('ok', 'Geçmiş silindi', 'Tüm geçmiş ilaç kayıtları kaldırıldı.', 3000);
+}
+
+// ============ YARDIMCI ============
+function fmtDateShort(isoDate) {
+  if (!isoDate) return '—';
+  var months = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  var parts = isoDate.split('-');
+  if (parts.length < 3) return isoDate;
+  return parseInt(parts[2]) + ' ' + months[parseInt(parts[1])-1] + ' ' + parts[0];
+}
+
+function fmtDate(iso) {
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString('tr-TR', { day:'2-digit', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' });
+}
+
+var todayKey = new Date().toDateString();
+var lastDay  = localStorage.getItem('medtrack_day');
+if (lastDay && lastDay !== todayKey) {
+  db.meds.forEach(function(m){ m.takenToday = false; });
+  db.watchers = db.watchers.filter(function(w){
+    return w.checks && w.checks.some(function(c){ return !c.shown; });
+  });
+  saveDB();
+  showNotif('info', '☀️ Günaydın!', 'Yeni gün başladı. İlaç programınız sıfırlandı.', 8000);
+}
+localStorage.setItem('medtrack_day', todayKey);
+
+
+(function deduplicateMeds() {
+  var seen = {};
+  var toKeep = [];
+  db.meds.slice().reverse().forEach(function(m) {
+    var key = m.name.toLowerCase();
+    if (!seen[key]) {
+      seen[key] = true;
+      toKeep.push(m);
+    } else {
+      m.active  = false;
+      m.endedAt = m.endedAt || new Date().toISOString();
+      db.pastMeds.push(m);
+    }
+  });
+  if (toKeep.length !== db.meds.length) {
+    db.meds = toKeep.reverse();
+    saveDB();
+  }
+})();
+
+
+buildTahlilFields();
+updateApiKeyIndicator();
+</script>
+</body>
+</html>
